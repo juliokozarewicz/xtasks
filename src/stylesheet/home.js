@@ -3,6 +3,7 @@ import {StyleSheet} from 'react-native';
 
 // styles
 export default StyleSheet.create(
+
   {
 
     /*
@@ -37,6 +38,6 @@ export default StyleSheet.create(
       color: 'black',
     },
 
-}
+  }
 
 );
