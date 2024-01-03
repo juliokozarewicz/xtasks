@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, SafeAreaView, Text} from 'react-native';
 
-// Import stylesheet from home
+// Import home stylesheet
 import homeStyle from './stylesheet/home';
 
 const App = () => {
