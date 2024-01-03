@@ -1,8 +1,17 @@
 // colors
 
 {
+
+// main colors
 "green": "#4BFFAD",
 "orange": "#FFAD4B",
 "purple": "#ad4bff",
 "black": "black",
+
+// gray scale
+"gray1": "#E6E6E6",
+"gray2": "#CCCCCC",
+"gray3": "#4D4D4D",
+"gray5": "#2E2E2E",
+
 }

@@ -51,6 +51,7 @@
 	<array>
 		<string>title.ttf</string>
 		<string>text.ttf</string>
+		<string>textbold.ttf</string>
 	</array>
 </dict>
 </plist>

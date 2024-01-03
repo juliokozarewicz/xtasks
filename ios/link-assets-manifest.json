@@ -3,7 +3,11 @@
   "data": [
     {
       "path": "src/2_fonts/text.ttf",
-      "sha1": "d8538c7f4bfb09e35885c22cf2d7505941f40135"
+      "sha1": "cd2f14c162cf2a3f4393d8af628074bf90654d15"
+    },
+    {
+      "path": "src/2_fonts/textbold.ttf",
+      "sha1": "a44ab75ddca1e7fb0a28e933a819c6f0d6449b4a"
     },
     {
       "path": "src/2_fonts/title.ttf",
