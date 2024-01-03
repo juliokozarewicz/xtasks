@@ -9,9 +9,12 @@ export default StyleSheet.create(
   {
 
     allcontent: {
+      width: '100%',
       flex: 1,
-      justifyContent: 'start',
+      
       alignItems: 'center',
+      justifyContent: 'start',
+      
       backgroundColor: colors.green,
     },
 
@@ -22,11 +25,14 @@ export default StyleSheet.create(
 
     // Edit from here
     titletop: {
-      marginTop: 70,
       width: '90%',
+      
+      marginTop: 70,
+      
       fontSize: 20,
-      color: colors.black,
       fontFamily: 'textbold',
+      
+      color: colors.black,
     },
 
   }
