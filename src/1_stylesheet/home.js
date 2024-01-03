@@ -15,11 +15,11 @@ export default StyleSheet.create(
       alignItems: 'center',
       justifyContent: 'start',
       
-      backgroundColor: colors.green,
+      backgroundColor: colors.gray1,
     },
 
     statusbar: {
-      backgroundColor: colors.purple,
+      backgroundColor: colors.green,
     },
 
     safeareaview: {
