@@ -2,7 +2,7 @@ import React from 'react';
 import {View, SafeAreaView, Text} from 'react-native';
 
 // Import home stylesheet
-import homeStyle from './stylesheet/home';
+import homeStyle from './1_stylesheet/home';
 
 const App = () => {
   return (
