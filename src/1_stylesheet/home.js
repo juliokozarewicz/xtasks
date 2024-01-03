@@ -18,6 +18,10 @@ export default StyleSheet.create(
       backgroundColor: colors.green,
     },
 
+    statusbar: {
+      backgroundColor: colors.purple,
+    },
+
     safeareaview: {
       width: '90%',
       flex: 1,
