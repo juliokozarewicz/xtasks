@@ -13,6 +13,7 @@ export default StyleSheet.create(
       justifyContent: 'start',
       alignItems: 'center',
       backgroundColor: colors.green,
+      fontFamily: 'title',
     },
 
     safeareaview: {
@@ -26,6 +27,7 @@ export default StyleSheet.create(
       width: '90%',
       fontSize: 20,
       color: colors.black,
+      fontFamily: 'title',
     },
 
   }
