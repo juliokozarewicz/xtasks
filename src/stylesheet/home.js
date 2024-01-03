@@ -2,38 +2,41 @@ import {StyleSheet} from 'react-native';
 
 
 // styles
-export default StyleSheet.create({
+export default StyleSheet.create(
+  {
 
-  /*
-  Laranja:
-  #FFAD4B
+    /*
+    Laranja:
+    #FFAD4B
 
-  Verde:
-  #4BFFAD
-  
-  roxo:
-  #AD4BFF
-  */
+    Verde:
+    #4BFFAD
+    
+    roxo:
+    #AD4BFF
+    */
 
-  allcontent: {
-    flex: 1,
-    justifyContent: 'start',
-    alignItems: 'center',
-    backgroundColor: '#7EFCBB',
-  },
+    allcontent: {
+      flex: 1,
+      justifyContent: 'start',
+      alignItems: 'center',
+      backgroundColor: '#7EFCBB',
+    },
 
-  safeareaview: {
-    width: '90%',
-    flex: 1,
-  },
+    safeareaview: {
+      width: '90%',
+      flex: 1,
+    },
 
 
-  // Edit from here
-  titletop: {
-    marginTop: 70,
-    width: '90%',
-    fontSize: 20,
-    color: 'black',
-  },
+    // Edit from here
+    titletop: {
+      marginTop: 70,
+      width: '90%',
+      fontSize: 20,
+      color: 'black',
+    },
 
-});
+}
+
+);
