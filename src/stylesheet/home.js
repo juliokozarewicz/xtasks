@@ -17,15 +17,22 @@ export default StyleSheet.create({
 
   allcontent: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'start',
     alignItems: 'center',
     backgroundColor: '#7EFCBB',
   },
 
+  safeareaview: {
+    width: '90%',
+    flex: 1,
+  },
+
+
+  // Edit from here
   titletop: {
     marginTop: 70,
     width: '90%',
-    fontSize: 25,
+    fontSize: 20,
     color: 'black',
   },
 
