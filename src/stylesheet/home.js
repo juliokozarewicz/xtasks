@@ -20,7 +20,7 @@ export default StyleSheet.create(
       flex: 1,
       justifyContent: 'start',
       alignItems: 'center',
-      backgroundColor: '#7EFCBB',
+      backgroundColor: '#4BFFAD',
     },
 
     safeareaview: {
