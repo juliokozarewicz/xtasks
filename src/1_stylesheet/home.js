@@ -31,12 +31,78 @@ export default StyleSheet.create(
     titletop: {
       width: '90%',
       
-      marginTop: 70,
+      marginTop: 50,
       
       fontSize: 20,
       fontFamily: 'textbold',
       
+      color: colors.purple,
+    },
+    
+    texts: {
+      width: '90%',
+      
+      marginTop: 20,
+      
+      fontSize: 12,
+      fontFamily: 'textbold',
+      
       color: colors.black,
+    },
+
+    frame_itask: {
+      marginTop: 50,
+
+      width: '100%',
+      height: 50,
+      
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      
+      gap: 10,
+
+      flexDirection: 'row',
+    },
+    
+    itask: {
+      width: '50%',
+      flex: 1,
+      
+      backgroundColor: colors.gray2,
+      borderColor: 'red',
+      color: colors.gray5,
+
+      fontSize: 15,
+
+      paddingLeft: 15,
+
+      borderRadius: 10,
+      borderWidth: 1,
+      borderColor: colors.gray3,
+      borderRadius: 10,
+
+    },
+
+    itask_placeholder: {
+      color: colors.gray4,
+    },
+
+    btnitask: {
+      width: 60,
+      flex: 1,
+      
+      backgroundColor: colors.gray2,
+      color: colors.gray5,
+
+      borderWidth: 1,
+      borderColor: 'red',
+
+      fontSize: 15,
+
+      paddingLeft: 15,
+
+      borderRadius: 10,
+
     },
 
   }
