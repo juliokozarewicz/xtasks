@@ -11,7 +11,7 @@ const App = () => {
 
       <SafeAreaView style={homeStyle.safeareaview}>
 
-        <StatusBar barStyle="light-content" backgroundColor={homeStyle.statusbar.backgroundColor} />
+        <StatusBar barStyle="dark-content" backgroundColor={homeStyle.statusbar.backgroundColor} />
 
         <Text style={homeStyle.titletop}>Olá, tudo bem!</Text>
 
