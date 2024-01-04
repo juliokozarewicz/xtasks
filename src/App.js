@@ -31,7 +31,12 @@ const App = () => {
         <View style={homeStyle.frame_itask}>
 
           <TextInput
-            style={[homeStyle.itask, isFocused && homeStyle.itaskFocused]}
+            style={
+              [
+                homeStyle.itask,
+                isFocused ? homeStyle.itaskFocused : null,
+              ]
+            }
               
             placeholder='Insira uma tarefa...'
             placeholderTextColor={homeStyle.itask_placeholder.color}
@@ -57,10 +62,6 @@ const App = () => {
               
             placeholder='Insira uma tarefa...'
             placeholderTextColor={homeStyle.itask_placeholder.color}
-
-
-            onFocus={() => setFocused(true)}
-            onBlur={() => setFocused(false)}
           /> 
 
       </SafeAreaView>
