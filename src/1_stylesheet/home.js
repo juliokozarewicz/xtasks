@@ -90,20 +90,30 @@ export default StyleSheet.create(
 
     btnitask: {
       width: 60,
-      flex: 1,
+      height: '100%',
       
-      backgroundColor: colors.gray2,
+      backgroundColor: colors.purple,
       color: colors.gray5,
 
       borderWidth: 1,
-      borderColor: 'red',
-
-      fontSize: 15,
+      borderColor: colors.purple,
 
       paddingLeft: 15,
 
       borderRadius: 10,
 
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
+    btnitask_text: {
+      width: '100%',
+      height: '100%',
+
+      color: 'red',
+      
+      alignItems: 'center',
+      justifyContent: 'center',
     },
 
   }

@@ -7,7 +7,7 @@ import {
   SafeAreaView,
   Text,
   TextInput,
-  Button
+  TouchableOpacity
 } from 'react-native';
 
 // Import home stylesheet
@@ -35,11 +35,9 @@ const App = () => {
             placeholderTextColor={homeStyle.itask_placeholder.color}
           /> 
 
-          <Button
-            style={homeStyle.btnitask}
-            title="+"
-            onPress={ () => alert('testeee!')}
-          />
+          <TouchableOpacity style={homeStyle.btnitask} onPress={ () => alert('testeee!')}>
+           <Text style={homeStyle.btnitask_text}>+</Text>
+          </TouchableOpacity>
 
         </View>
 
