@@ -14,7 +14,9 @@ import {
 import homeStyle from './1_stylesheet/home';
 
 const App = () => {
+
   return (
+    
 
     <View style={homeStyle.allcontent}>
 
@@ -32,6 +34,7 @@ const App = () => {
 
             placeholder='Insira uma tarefa...'
             placeholderTextColor={homeStyle.itask_placeholder.color}
+
           >
           </TextInput>
           
