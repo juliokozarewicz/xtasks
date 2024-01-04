@@ -40,7 +40,8 @@ const App = () => {
             onPress={ () => alert('testeee!')}
           >
 
-            <Text style={homeStyle.btnitask_text}>+</Text>
+            <View style={homeStyle.btnitask_line1} ></View>
+            <View style={homeStyle.btnitask_line2} ></View>
 
           </TouchableOpacity>
 

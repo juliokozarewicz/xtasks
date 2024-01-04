@@ -103,9 +103,31 @@ export default StyleSheet.create(
       justifyContent: 'center',
     },
 
-    btnitask_text: {
-      marginTop: 0,
-      backgroundColor: 'blue',
+    btnitask_line1: {
+      width: 25,
+      height: 3,
+
+      backgroundColor: 'white',
+
+      maxHeight: 40,
+
+      color: 'white',
+      fontFamily: 'textbold',
+      fontSize: 60,
+
+      textAlign: 'center',
+      textAlignVertical: 'center',
+    }, 
+
+    btnitask_line2: {
+      position: 'absolute',
+
+      transform: [{ rotate: '90deg' }],
+
+      width: 25,
+      height: 3,
+
+      backgroundColor: 'white',
 
       maxHeight: 40,
 
