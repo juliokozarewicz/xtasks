@@ -27,7 +27,7 @@ const App = () => {
         <StatusBar barStyle="dark-content" backgroundColor={homeStyle.statusbar.backgroundColor} />
 
         <Text style={homeStyle.titletop}>Olá, tudo bem?</Text>
-        <Text style={homeStyle.texts}>Agora você organiza a sua vida! Adicione novos itens e nunca mais esqueça de realizar suas tarefas</Text>
+        <Text style={homeStyle.texts}>Agora você organiza a sua vida! Adicione novos itens e se matenha no controle.</Text>
 
         <View style={homeStyle.frame_itask}>
 
