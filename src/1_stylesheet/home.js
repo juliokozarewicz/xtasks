@@ -34,7 +34,7 @@ export default StyleSheet.create(
       marginTop: 50,
       
       fontSize: 20,
-      fontFamily: 'textbold',
+      fontFamily: 'title',
       
       color: colors.purple,
     },
@@ -91,14 +91,11 @@ export default StyleSheet.create(
     btnitask: {
       width: 60,
       height: '100%',
-      
+
       backgroundColor: colors.purple,
-      color: colors.gray5,
 
       borderWidth: 1,
       borderColor: colors.purple,
-
-      paddingLeft: 15,
 
       borderRadius: 10,
 
@@ -107,14 +104,18 @@ export default StyleSheet.create(
     },
 
     btnitask_text: {
-      width: '100%',
-      height: '100%',
+      marginTop: 0,
+      backgroundColor: 'blue',
 
-      color: 'red',
-      
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
+      maxHeight: 40,
+
+      color: 'white',
+      fontFamily: 'textbold',
+      fontSize: 60,
+
+      textAlign: 'center',
+      textAlignVertical: 'center',
+    }, 
 
   }
 

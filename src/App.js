@@ -28,15 +28,20 @@ const App = () => {
 
         <View style={homeStyle.frame_itask}>
 
-        <TextInput
+          <TextInput
             style={homeStyle.itask}
-            
+              
             placeholder='Insira uma tarefa...'
             placeholderTextColor={homeStyle.itask_placeholder.color}
           /> 
 
-          <TouchableOpacity style={homeStyle.btnitask} onPress={ () => alert('testeee!')}>
-           <Text style={homeStyle.btnitask_text}>+</Text>
+          <TouchableOpacity
+            style={homeStyle.btnitask}
+            onPress={ () => alert('testeee!')}
+          >
+
+            <Text style={homeStyle.btnitask_text}>+</Text>
+
           </TouchableOpacity>
 
         </View>
