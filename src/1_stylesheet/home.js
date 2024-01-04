@@ -24,7 +24,6 @@ export default StyleSheet.create(
 
     safeareaview: {
       width: '90%',
-      flex: 1,
     },
 
     // Edit from here
@@ -140,6 +139,26 @@ export default StyleSheet.create(
       textAlign: 'center',
       textAlignVertical: 'center',
     }, 
+
+    cleantasks: {
+      position: 'absolute',
+      bottom: 0,
+
+      width: '100%',
+      height: 50,
+
+      backgroundColor: colors.purple,
+
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
+    cleantasks_text: {
+      fontFamily: 'textbold',
+      fontSize: 14,
+
+      color: 'white',
+    },
 
   }
 

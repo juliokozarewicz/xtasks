@@ -58,14 +58,22 @@ const App = () => {
 
         </View>
           
-          <TextInput
+          
+          
+          
+        <TextInput
               
-            placeholder='Insira uma tarefa...'
-            placeholderTextColor={homeStyle.itask_placeholder.color}
-          /> 
+          placeholder='Insira uma tarefa...'
+          placeholderTextColor={homeStyle.itask_placeholder.color}
+        
+        />
 
       </SafeAreaView>
-
+      
+      <TouchableOpacity style={homeStyle.cleantasks}>
+        <Text style={homeStyle.cleantasks_text}>Limpar todas as tarefas</Text>
+      </TouchableOpacity>
+  
     </View>
 
   );
