@@ -23,7 +23,10 @@ export default StyleSheet.create(
     },
 
     safeareaview: {
+      position: 'relative',
+
       width: '90%',
+      flex: 1,
     },
 
     // Edit from here
@@ -50,7 +53,7 @@ export default StyleSheet.create(
     },
 
     frame_itask: {
-      marginTop: 50,
+      marginTop: 30,
 
       width: '100%',
       height: 50,
@@ -61,6 +64,11 @@ export default StyleSheet.create(
       gap: 10,
 
       flexDirection: 'row',
+    },
+
+    roll_tasks: {
+      marginTop: 25,
+      marginBottom: 58,
     },
     
     itask: {
