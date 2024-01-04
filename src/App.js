@@ -14,9 +14,8 @@ import {
 import homeStyle from './1_stylesheet/home';
 
 const App = () => {
-
-  return (
     
+  return (
 
     <View style={homeStyle.allcontent}>
 
@@ -29,15 +28,13 @@ const App = () => {
 
         <View style={homeStyle.frame_itask}>
 
-          <TextInput
+        <TextInput
             style={homeStyle.itask}
-
+            
             placeholder='Insira uma tarefa...'
             placeholderTextColor={homeStyle.itask_placeholder.color}
+          /> 
 
-          >
-          </TextInput>
-          
           <Button
             style={homeStyle.btnitask}
             title="+"
