@@ -83,6 +83,8 @@ export default StyleSheet.create(
       borderRadius: 10,
 
     },
+    
+    itaskFocused: {borderColor: colors.green},
 
     itask_placeholder: {
       color: colors.gray4,
