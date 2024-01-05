@@ -45,7 +45,7 @@ export default StyleSheet.create(
       marginTop: 5,
 
       fontFamily: 'textbold',
-      fontSize: 11,
+      fontSize: 12,
 
       color: colors.gray4,
     },
@@ -88,7 +88,8 @@ export default StyleSheet.create(
       borderColor: 'red',
       color: colors.gray5,
 
-      fontSize: 15,
+      fontFamily: 'textbold',
+      fontSize: 12,
 
       paddingLeft: 15,
 
@@ -131,7 +132,6 @@ export default StyleSheet.create(
 
       color: 'white',
       fontFamily: 'textbold',
-      fontSize: 60,
 
       textAlign: 'center',
       textAlignVertical: 'center',
@@ -151,7 +151,6 @@ export default StyleSheet.create(
 
       color: 'white',
       fontFamily: 'textbold',
-      fontSize: 60,
 
       textAlign: 'center',
       textAlignVertical: 'center',
@@ -161,7 +160,7 @@ export default StyleSheet.create(
       marginTop: 30,
 
       fontFamily: 'textbold',
-      fontSize: 14,
+      fontSize: 12,
 
       color: colors.black
     },
@@ -181,7 +180,7 @@ export default StyleSheet.create(
 
     cleantasks_text: {
       fontFamily: 'textbold',
-      fontSize: 14,
+      fontSize: 12,
 
       color: 'white',
     },
@@ -206,12 +205,26 @@ export default StyleSheet.create(
       borderColor: 'red',
       color: colors.gray5,
 
-      fontSize: 15,
+      fontSize: 12,
 
       paddingLeft: 15,
 
       borderRadius: 10,
 
+      alignItems: 'flex-start',
+      justifyContent: 'center',
+
+      fontFamily: 'textbold',
+      fontSize: 12,
+
+      color: colors.black
+    },
+
+    taskdescript_txt: {
+      fontFamily: 'textbold',
+      fontSize: 12,
+
+      color: colors.gray5
     },
 
   }

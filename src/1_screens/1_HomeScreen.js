@@ -92,7 +92,7 @@ export default () => {
           <View style={HomeStyle.taskinserted}>
 
             <View style={HomeStyle.taskdescript}>
-              <Text>sair passear com o cachorro</Text>
+              <Text style={HomeStyle.taskdescript_txt}>sair passear com o cachorro</Text>
             </View>
 
             <TouchableOpacity
