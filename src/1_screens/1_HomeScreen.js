@@ -40,7 +40,7 @@ export default () => {
   const formattedDate = getFormattedDate();
 
   // teste
-  texto = 'sair PassEar com O cachoRRo sasad sadsadsadsadsa asdsd sadsad sd ssadsadsad sds as dsadsadasdsadsad sdsd asd asd sa.'
+  texto = 'sair PassEar com O cachoRRo as  sasad sadsadsadsadsa asdsd sadsad sd ssadsadsad sds as dsadsadasdsadsad sdsd asd asd sa.'
 
   return (
 
@@ -101,13 +101,9 @@ export default () => {
             </View>
 
             <TouchableOpacity
-              style={HomeStyle.btnitask}
+              style={HomeStyle.btndeletetask}
               onPress={ () => alert('testeee!')}
             >
-
-              <View style={HomeStyle.btnitask_line1} ></View>
-              <View style={HomeStyle.btnitask_line2} ></View>
-
             </TouchableOpacity>
 
           </View>

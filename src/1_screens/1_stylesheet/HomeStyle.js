@@ -84,7 +84,7 @@ export default StyleSheet.create(
       width: '50%',
       flex: 1,
       
-      backgroundColor: colors.gray2,
+      backgroundColor: colors.gray1,
       borderColor: 'red',
       color: colors.gray5,
 
@@ -95,7 +95,7 @@ export default StyleSheet.create(
 
       borderRadius: 10,
       borderWidth: 1,
-      borderColor: colors.gray3,
+      borderColor: colors.gray2,
       
       borderRadius: 10,
 
@@ -204,7 +204,6 @@ export default StyleSheet.create(
       height: '100%',
       
       backgroundColor: colors.gray2,
-      borderColor: 'red',
       color: colors.gray5,
 
       fontSize: 12,
@@ -212,6 +211,9 @@ export default StyleSheet.create(
       paddingLeft: 15,
 
       borderRadius: 10,
+
+      borderWidth: 1,
+      borderColor: colors.gray2,
 
       alignItems: 'flex-start',
       justifyContent: 'center',
@@ -227,6 +229,18 @@ export default StyleSheet.create(
       fontSize: 12,
 
       color: colors.gray5,
+    },
+
+    btndeletetask: {
+      width: 60,
+      height: '100%',
+
+      backgroundColor: colors.green,
+
+      borderRadius: 10,
+
+      alignItems: 'center',
+      justifyContent: 'center',
     },
 
   }
