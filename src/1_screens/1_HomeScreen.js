@@ -9,7 +9,8 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  ScrollView
+  ScrollView,
+  Image,
 } from 'react-native';
 
 // Import home stylesheet
@@ -105,6 +106,10 @@ export default () => {
               style={HomeStyle.btndeletetask}
               onPress={ () => alert('testeee!')}
             >
+              <Image
+                source={require('./3_imgs/deleteicon.png')}
+                style={HomeStyle.deleteicon}
+              />
             </TouchableOpacity>
 
           </View>

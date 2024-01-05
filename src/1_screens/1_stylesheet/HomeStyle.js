@@ -243,6 +243,11 @@ export default StyleSheet.create(
       justifyContent: 'center',
     },
 
+    deleteicon: {
+      width: 25,
+      height: 25,
+    }
+
   }
 
 );
