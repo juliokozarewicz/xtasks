@@ -1,5 +1,7 @@
 import React from 'react';
 
+// import json db
+import * as database from './5_database/database.json';
 
 // components
 import {
