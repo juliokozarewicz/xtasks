@@ -49,9 +49,9 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>title.ttf</string>
 		<string>text.ttf</string>
 		<string>textbold.ttf</string>
+		<string>title.ttf</string>
 	</array>
 </dict>
 </plist>
