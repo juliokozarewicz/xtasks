@@ -35,16 +35,25 @@ export default StyleSheet.create(
       
       marginTop: 50,
       
-      fontSize: 20,
+      fontSize: 29,
       fontFamily: 'title',
       
       color: colors.purple,
+    },
+
+    datetime: {
+      marginTop: 5,
+
+      fontFamily: 'textbold',
+      fontSize: 11,
+
+      color: colors.gray4,
     },
     
     texts: {
       width: '90%',
       
-      marginTop: 20,
+      marginTop: 15,
       
       fontSize: 12,
       fontFamily: 'textbold',

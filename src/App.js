@@ -26,7 +26,8 @@ const App = () => {
 
         <StatusBar barStyle="dark-content" backgroundColor={homeStyle.statusbar.backgroundColor} />
 
-        <Text style={homeStyle.titletop}>Olá, tudo bem?</Text>
+        <Text style={homeStyle.titletop}>XTASKS</Text>
+        <Text style={homeStyle.datetime}>{new Date().toDateString()}</Text>
         <Text style={homeStyle.texts}>Agora você organiza a sua vida! Adicione novos itens e se matenha no controle.</Text>
 
         <View style={homeStyle.frame_itask}>
