@@ -22,6 +22,24 @@ const App = () => {
   const [isFocused, setFocused] = React.useState(false);
 
   // date
+  function getFormattedDate() {
+    const currentDate = new Date();
+
+    const day = currentDate.getDate().toString().padStart(2, '0');
+
+    const monthNames = [
+      'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+      'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+    ];
+
+    const month = monthNames[currentDate.getMonth()]; // Obtém o nome do mês
+    const year = currentDate.getFullYear();
+
+    return `${day} de ${month} de ${year}`;
+  }
+ 
+
+  const formattedDate = getFormattedDate();
 
   return (
 
@@ -32,7 +50,7 @@ const App = () => {
         <StatusBar barStyle="dark-content" backgroundColor={homeStyle.statusbar.backgroundColor} />
 
         <Text style={homeStyle.titletop}>XTASKS</Text>
-        <Text style={homeStyle.datetime}>{new Date().toDateString()}</Text>
+        <Text style={homeStyle.datetime}>{formattedDate}</Text>
         <Text style={homeStyle.texts}>Agora você organiza a sua vida! Adicione novos itens e se matenha no controle.</Text>
 
         <View style={homeStyle.frame_itask}>
