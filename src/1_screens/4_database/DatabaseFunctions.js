@@ -1,22 +1,26 @@
 import SQLite from 'react-native-sqlite-storage';
 
-const db = SQLite.openDatabase({ name: 'tarefas.db', location: 'default' });
+// config db local
+const db_name = 'tarefas';
+const table_name = 'lista_tarefas';
+
+const db = SQLite.openDatabase({ name: `${db_name}.db`, location: 'default' });
 
 export const openDatabaseAndCreateTable = () => {
-
-  db.transaction((tx) => {
-    tx.executeSql(
-      'CREATE TABLE IF NOT EXISTS lista_tarefas (id INTEGER PRIMARY KEY AUTOINCREMENT, tarefa TEXT NOT NULL)',
-      [],
-      (tx, results) => {
-        console.log('Tabela criada com sucesso');
-      },
-      (error) => {
-        console.error('Erro ao criar a tabela', error);
-      }
-    );
-  });
+  db.transaction(
+    (tx) => {
+      tx.executeSql(
+        `CREATE TABLE IF NOT EXISTS ${table_name} (id INTEGER PRIMARY KEY AUTOINCREMENT, tarefa TEXT NOT NULL)`,
+      );
+    }
+  );
 };
+
+
+
+
+
+
 
 export const inserirTarefasIniciais = () => {
     const tarefasIniciais = ['Tarefa1', 'Tarefa2', 'Tarefa3'];
@@ -39,7 +43,7 @@ export const inserirTarefasIniciais = () => {
 export const carregarTarefas = () => {
     db.transaction((tx) => {
     tx.executeSql(
-        'SELECT * FROM lista_tarefas',
+        `SELECT * FROM ${table_name}`,
         [],
         (tx, results) => {
         const rows = results.rows.raw();
