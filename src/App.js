@@ -32,7 +32,7 @@ const App = () => {
       'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
     ];
 
-    const month = monthNames[currentDate.getMonth()]; // Obtém o nome do mês
+    const month = monthNames[currentDate.getMonth()];
     const year = currentDate.getFullYear();
 
     return `${day} de ${month} de ${year}`;
