@@ -76,7 +76,7 @@ export default StyleSheet.create(
     },
 
     roll_tasks: {
-      marginTop: 25,
+      marginTop: 10,
       marginBottom: 58,
     },
     
@@ -157,6 +157,15 @@ export default StyleSheet.create(
       textAlignVertical: 'center',
     }, 
 
+    pendente: {
+      marginTop: 30,
+
+      fontFamily: 'textbold',
+      fontSize: 14,
+
+      color: colors.black
+    },
+
     cleantasks: {
       position: 'absolute',
       bottom: 0,
@@ -175,6 +184,34 @@ export default StyleSheet.create(
       fontSize: 14,
 
       color: 'white',
+    },
+    
+    taskinserted: {
+      width: '100%',
+      height: 50,
+      
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      
+      gap: 10,
+
+      flexDirection: 'row',
+    },
+    
+    taskdescript: {
+      flex: 1,
+      height: '100%',
+      
+      backgroundColor: colors.gray2,
+      borderColor: 'red',
+      color: colors.gray5,
+
+      fontSize: 15,
+
+      paddingLeft: 15,
+
+      borderRadius: 10,
+
     },
 
   }

@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 
 // Import home stylesheet
-import homeStyle from './1_stylesheet/HomeStyle';
+import HomeStyle from './1_stylesheet/HomeStyle';
 
 export default () => {
 
@@ -41,28 +41,28 @@ export default () => {
 
   return (
 
-    <View style={homeStyle.allcontent}>
+    <View style={HomeStyle.allcontent}>
 
-      <SafeAreaView style={homeStyle.safeareaview}>
+      <SafeAreaView style={HomeStyle.safeareaview}>
 
-        <StatusBar barStyle="dark-content" backgroundColor={homeStyle.statusbar.backgroundColor} />
+        <StatusBar barStyle="dark-content" backgroundColor={HomeStyle.statusbar.backgroundColor} />
 
-        <Text style={homeStyle.titletop}>XTASKS</Text>
-        <Text style={homeStyle.datetime}>{formattedDate}</Text>
-        <Text style={homeStyle.texts}>Agora você organiza a sua vida! Adicione novos itens e se matenha no controle.</Text>
+        <Text style={HomeStyle.titletop}>XTASKS</Text>
+        <Text style={HomeStyle.datetime}>{formattedDate}</Text>
+        <Text style={HomeStyle.texts}>Agora você organiza a sua vida! Adicione novos itens e se matenha no controle.</Text>
 
-        <View style={homeStyle.frame_itask}>
+        <View style={HomeStyle.frame_itask}>
 
           <TextInput
             style={
               [
-                homeStyle.itask,
-                isFocused ? homeStyle.itaskFocused : null,
+                HomeStyle.itask,
+                isFocused ? HomeStyle.itaskFocused : null,
               ]
             }
               
             placeholder='Insira uma tarefa...'
-            placeholderTextColor={homeStyle.itask_placeholder.color}
+            placeholderTextColor={HomeStyle.itask_placeholder.color}
 
 
             onFocus={() => setFocused(true)}
@@ -70,42 +70,53 @@ export default () => {
           /> 
 
           <TouchableOpacity
-            style={homeStyle.btnitask}
+            style={HomeStyle.btnitask}
             onPress={ () => alert('testeee!')}
           >
 
-            <View style={homeStyle.btnitask_line1} ></View>
-            <View style={homeStyle.btnitask_line2} ></View>
+            <View style={HomeStyle.btnitask_line1} ></View>
+            <View style={HomeStyle.btnitask_line2} ></View>
 
           </TouchableOpacity>
 
         </View>
+
+        <Text style={HomeStyle.pendente}>Pendentes:</Text>
           
-        <ScrollView style={homeStyle.roll_tasks}>
-          <TextInput placeholder='Insira uma tarefa...' placeholderTextColor={homeStyle.itask_placeholder.color}/>
-          <TextInput placeholder='Insira uma tarefa...' placeholderTextColor={homeStyle.itask_placeholder.color}/>
-          <TextInput placeholder='Insira uma tarefa...' placeholderTextColor={homeStyle.itask_placeholder.color}/>
-          <TextInput placeholder='Insira uma tarefa...' placeholderTextColor={homeStyle.itask_placeholder.color}/>
-          <TextInput placeholder='Insira uma tarefa...' placeholderTextColor={homeStyle.itask_placeholder.color}/>
-          <TextInput placeholder='Insira uma tarefa...' placeholderTextColor={homeStyle.itask_placeholder.color}/>
-          <TextInput placeholder='Insira uma tarefa...' placeholderTextColor={homeStyle.itask_placeholder.color}/>
-          <TextInput placeholder='Insira uma tarefa...' placeholderTextColor={homeStyle.itask_placeholder.color}/>
-          <TextInput placeholder='Insira uma tarefa...' placeholderTextColor={homeStyle.itask_placeholder.color}/>
-          <TextInput placeholder='Insira uma tarefa...' placeholderTextColor={homeStyle.itask_placeholder.color}/>
-          <TextInput placeholder='Insira uma tarefa...' placeholderTextColor={homeStyle.itask_placeholder.color}/>
-          <TextInput placeholder='Insira uma tarefa...' placeholderTextColor={homeStyle.itask_placeholder.color}/>
-          <TextInput placeholder='Insira uma tarefa...' placeholderTextColor={homeStyle.itask_placeholder.color}/>
-          <TextInput placeholder='Insira uma tarefa...' placeholderTextColor={homeStyle.itask_placeholder.color}/>
-          <TextInput placeholder='Insira uma tarefa...' placeholderTextColor={homeStyle.itask_placeholder.color}/>
-          <TextInput placeholder='Insira uma tarefa...' placeholderTextColor={homeStyle.itask_placeholder.color}/>
-          <TextInput placeholder='Insira uma tarefa...' placeholderTextColor={homeStyle.itask_placeholder.color}/>
-          <TextInput placeholder='Insira uma tarefa...' placeholderTextColor={homeStyle.itask_placeholder.color}/>
+        <ScrollView style={HomeStyle.roll_tasks}>
+
+
+
+
+
+          <View style={HomeStyle.taskinserted}>
+
+            <View style={HomeStyle.taskdescript}>
+              <Text>sair passear com o cachorro</Text>
+            </View>
+
+            <TouchableOpacity
+              style={HomeStyle.btnitask}
+              onPress={ () => alert('testeee!')}
+            >
+
+              <View style={HomeStyle.btnitask_line1} ></View>
+              <View style={HomeStyle.btnitask_line2} ></View>
+
+            </TouchableOpacity>
+
+          </View>
+
+
+
+
+
         </ScrollView>
 
       </SafeAreaView>
         
-      <TouchableOpacity style={homeStyle.cleantasks}>
-        <Text style={homeStyle.cleantasks_text}>Apagar todas as tarefas</Text>
+      <TouchableOpacity style={HomeStyle.cleantasks}>
+        <Text style={HomeStyle.cleantasks_text}>Apagar todas as tarefas</Text>
       </TouchableOpacity>
 
     </View>
