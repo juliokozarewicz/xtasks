@@ -57,7 +57,7 @@ export default () => {
   
   // data base  
   // ----------------------------------------------------------------------
-  Database.ReadData()
+  const tarefasInseridas = Database.ReadData()
   // ----------------------------------------------------------------------
 
 
@@ -128,6 +128,14 @@ export default () => {
                 source={require('./3_imgs/deleteicon.png')}
                 style={HomeStyle.deleteicon}
               />
+
+
+                {
+
+                    
+                }
+
+
             </TouchableOpacity>
 
           </View>
