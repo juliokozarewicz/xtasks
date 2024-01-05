@@ -4,19 +4,45 @@ import SQLite from 'react-native-sqlite-storage';
 // -------------------------------------------------------
 const db_name = 'tarefas';
 const table_name = 'lista_tarefas';
+const column_name_1 = 'tarefa';
 // -------------------------------------------------------
 
 const db = SQLite.openDatabase({ name: `${db_name}.db`, location: 'default' });
 
+// create database, table and column
 export const openDatabaseAndCreateTable = () => {
   db.transaction(
     (tx) => {
       tx.executeSql(
-        `CREATE TABLE IF NOT EXISTS ${table_name} (id INTEGER PRIMARY KEY AUTOINCREMENT, tarefa TEXT NOT NULL)`,
+        `CREATE TABLE IF NOT EXISTS ${table_name} (id INTEGER PRIMARY KEY AUTOINCREMENT, ${column_name_1} TEXT NOT NULL)`,
       );
     }
   );
 };
+
+export const ReadData = () => {
+    db.transaction((tx) => {
+    tx.executeSql(
+        `SELECT * FROM ${table_name}`,
+        [],
+        (tx, results) => {
+        const rows = results.rows.raw();
+        console.log('Tarefas carregadas:', rows);
+        },
+        (error) => {
+        console.error('Erro ao buscar dados', error);
+        }
+    );
+    });
+};
+
+
+
+
+
+
+
+
 
 
 
@@ -39,21 +65,5 @@ export const inserirTarefasIniciais = () => {
         }
         );
     });
-    });
-};
-
-export const carregarTarefas = () => {
-    db.transaction((tx) => {
-    tx.executeSql(
-        `SELECT * FROM ${table_name}`,
-        [],
-        (tx, results) => {
-        const rows = results.rows.raw();
-        console.log('Tarefas carregadas:', rows);
-        },
-        (error) => {
-        console.error('Erro ao buscar dados', error);
-        }
-    );
     });
 };
