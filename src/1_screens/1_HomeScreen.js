@@ -1,8 +1,5 @@
 import React from 'react';
 
-// import json db
-import * as database from './5_database/database.json';
-
 // components
 import {
   StatusBar,
@@ -13,6 +10,7 @@ import {
   TouchableOpacity,
   ScrollView,
   Image,
+  AsyncStorage,
 } from 'react-native';
 
 // Import home stylesheet
@@ -43,12 +41,9 @@ export default () => {
 
   const formattedDate = getFormattedDate();
 
-  // teste
-  texto = 'sair PassEar com O cachoRRo as  sasad sadsadsadsadsa asdsd sadsad sd ssadsadsad sds as dsadsadasdsadsad sdsd asd asd sa.'
-
 
   return (
-
+  
     <View style={HomeStyle.allcontent}>
 
       <SafeAreaView style={HomeStyle.safeareaview}>
@@ -102,7 +97,7 @@ export default () => {
                 numberOfLines={1}
                 ellipsizeMode="tail"
               >
-                {texto.charAt(0).toUpperCase() + texto.slice(1).toLowerCase()}
+                {'sair PassEar com O cachoRRo as 09:00h.'.charAt(0).toUpperCase() + 'sair PassEar com O cachoRRo as 09:00h'.slice(1).toLowerCase()}
               </Text>
             </View>
 
