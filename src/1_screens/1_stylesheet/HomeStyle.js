@@ -95,7 +95,7 @@ export default StyleSheet.create(
 
       borderRadius: 10,
       borderWidth: 1,
-      borderColor: colors.gray2,
+      borderColor: colors.gray3,
       
       borderRadius: 10,
 
