@@ -46,6 +46,7 @@ export default () => {
   // teste
   texto = 'sair PassEar com O cachoRRo as  sasad sadsadsadsadsa asdsd sadsad sd ssadsadsad sds as dsadsadasdsadsad sdsd asd asd sa.'
 
+
   return (
 
     <View style={HomeStyle.allcontent}>
@@ -92,12 +93,6 @@ export default () => {
           
         <ScrollView style={HomeStyle.roll_tasks}>
 
-
-
-
-
-
-
           {/* List of tasks*/}
           <View style={HomeStyle.taskinserted}>
 
@@ -122,10 +117,6 @@ export default () => {
             </TouchableOpacity>
 
           </View>
-
-
-
-
 
         </ScrollView>
 

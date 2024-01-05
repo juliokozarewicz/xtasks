@@ -1,4 +1,11 @@
-
-{
-    "task": "testex",
-}
+[
+  {
+    "task": "teste0"
+  },
+  {
+    "task": "teste1"
+  },
+  {
+    "task": "teste2"
+  }
+]
