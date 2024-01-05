@@ -39,6 +39,9 @@ export default () => {
 
   const formattedDate = getFormattedDate();
 
+  // teste
+  texto = 'sair PassEar com O cachoRRo sasad sadsadsadsadsa asdsd sadsad sd ssadsadsad sds as dsadsadasdsadsad sdsd asd asd sa.'
+
   return (
 
     <View style={HomeStyle.allcontent}>
@@ -85,14 +88,16 @@ export default () => {
           
         <ScrollView style={HomeStyle.roll_tasks}>
 
-
-
-
-
           <View style={HomeStyle.taskinserted}>
 
             <View style={HomeStyle.taskdescript}>
-              <Text style={HomeStyle.taskdescript_txt}>sair passear com o cachorro</Text>
+              <Text
+                style={HomeStyle.taskdescript_txt}
+                numberOfLines={1}
+                ellipsizeMode="tail"
+              >
+                {texto.charAt(0).toUpperCase() + texto.slice(1).toLowerCase()}
+              </Text>
             </View>
 
             <TouchableOpacity
@@ -111,12 +116,21 @@ export default () => {
 
 
 
+
+
+
+
+
+
+
+
+
         </ScrollView>
 
       </SafeAreaView>
         
       <TouchableOpacity style={HomeStyle.cleantasks}>
-        <Text style={HomeStyle.cleantasks_text}>Apagar todas as tarefas</Text>
+        <Text style={HomeStyle.cleantasks_text}>apagar todas as tarefas</Text>
       </TouchableOpacity>
 
     </View>

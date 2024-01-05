@@ -183,6 +183,8 @@ export default StyleSheet.create(
       fontSize: 12,
 
       color: 'white',
+
+      textTransform: 'capitalize',
     },
     
     taskinserted: {
@@ -224,7 +226,7 @@ export default StyleSheet.create(
       fontFamily: 'textbold',
       fontSize: 12,
 
-      color: colors.gray5
+      color: colors.gray5,
     },
 
   }
