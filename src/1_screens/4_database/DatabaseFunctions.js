@@ -1,8 +1,10 @@
 import SQLite from 'react-native-sqlite-storage';
 
 // config db local
+// -------------------------------------------------------
 const db_name = 'tarefas';
 const table_name = 'lista_tarefas';
+// -------------------------------------------------------
 
 const db = SQLite.openDatabase({ name: `${db_name}.db`, location: 'default' });
 

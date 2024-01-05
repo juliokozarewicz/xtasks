@@ -9,7 +9,6 @@ const App = () => {
 
   // create db if not exists
   Database.openDatabaseAndCreateTable();
-  Database.carregarTarefas();
 
   return (
     <HomeScreen />
