@@ -90,6 +90,13 @@ export default () => {
           
         <ScrollView style={HomeStyle.roll_tasks}>
 
+
+
+
+
+
+
+          {/* List of tasks*/}
           <View style={HomeStyle.taskinserted}>
 
             <View style={HomeStyle.taskdescript}>
@@ -113,15 +120,6 @@ export default () => {
             </TouchableOpacity>
 
           </View>
-
-
-
-
-
-
-
-
-
 
 
 

@@ -76,7 +76,6 @@ export default StyleSheet.create(
     },
 
     roll_tasks: {
-      marginTop: 10,
       marginBottom: 58,
     },
     
@@ -188,6 +187,8 @@ export default StyleSheet.create(
     },
     
     taskinserted: {
+      marginTop: 10,
+
       width: '100%',
       height: 50,
       
