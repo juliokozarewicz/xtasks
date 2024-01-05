@@ -1,5 +1,7 @@
 import React from 'react';
 
+// date
+
 // components
 import {
   StatusBar,
@@ -16,8 +18,11 @@ import homeStyle from './1_stylesheet/home';
 
 const App = () => {
 
+  // border focus input task
   const [isFocused, setFocused] = React.useState(false);
-    
+
+  // date
+
   return (
 
     <View style={homeStyle.allcontent}>
