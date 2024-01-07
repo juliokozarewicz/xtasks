@@ -29,8 +29,9 @@ export default () => {
 
   // refresh funv
   // ----------------------------------------------------------------------
+  const [refreshCount, setRefreshCount] = React.useState(0);
   const handleRefresh = () => {
-    console.log('Refresh realizado');
+    setRefreshCount((prevCount) => prevCount + 1);
   };
   // ----------------------------------------------------------------------
 
@@ -69,7 +70,7 @@ export default () => {
 
   return (
   
-    <View style={HomeStyle.allcontent}>
+    <View key={refreshCount} style={HomeStyle.allcontent}>
 
       <SafeAreaView style={HomeStyle.safeareaview}>
 
