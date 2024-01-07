@@ -1,8 +1,10 @@
 import React from 'react';
 
 
-// database
-import * as DataBase from './4_functions/1_databse_functions';
+// import functions
+import * as DataBase from './4_functions/1_CRUD_functions';
+import * as DateFunctions from './4_functions/DateFunctions'
+import * as InputTask from './4_functions/InputTask'
 
 // components
 // ----------------------------------------------------------------------
@@ -26,37 +28,14 @@ import HomeStyle from './1_stylesheet/HomeStyle';
 // export app function
 // ----------------------------------------------------------------------
 export default () => {
-
-  // date
-  // ----------------------------------------------------------------------
-  function getFormattedDate() {
-    const currentDate = new Date();
-
-    const day = currentDate.getDate().toString().padStart(2, '0');
-
-    const monthNames = [
-      'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
-      'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
-    ];
-
-    const month = monthNames[currentDate.getMonth()];
-    const year = currentDate.getFullYear();
-
-    return `${day} de ${month} de ${year}`;
-  }
- 
-  const formattedDate = getFormattedDate();
-  // ----------------------------------------------------------------------
   
-  // input task
+  // states
   // ----------------------------------------------------------------------
+
+  // input task states
   const [isFocused, setFocused] = React.useState(false);
   const [taskInput, setTaskInput] = React.useState('');
   const [refreshInput, setRefreshInput] = React.useState(0);
-  
-  const handleRefresh = () => {
-    setRefreshInput((prevCount) => prevCount + 1);
-  };
   // ----------------------------------------------------------------------
 
   // database
@@ -74,7 +53,7 @@ export default () => {
         <StatusBar barStyle="dark-content" backgroundColor={HomeStyle.statusbar.backgroundColor} />
 
         <Text style={HomeStyle.titletop}>XTASKS</Text>
-        <Text style={HomeStyle.datetime}>{formattedDate}</Text>
+        <Text style={HomeStyle.datetime}>{DateFunctions.getFormattedDate()}</Text>
         <Text style={HomeStyle.texts}>Agora você organiza a sua vida! Adicione novos itens e se matenha no controle.</Text>
 
         <View style={HomeStyle.frame_itask}>
@@ -103,7 +82,8 @@ export default () => {
             onPress={() => {
               DataBase.CreateItemDataBase(taskInput);
               setTaskInput('');
-              handleRefresh();
+              setFocused(false);
+              InputTask.handleRefresh(setRefreshInput);
             }}
           >
 
