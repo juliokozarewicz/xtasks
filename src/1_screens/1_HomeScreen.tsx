@@ -102,6 +102,7 @@ export default () => {
             style={HomeStyle.btnitask}
             onPress={() => {
               DataBase.CreateItemDataBase(taskInput);
+              setTaskInput('');
               handleRefresh();
             }}
           >
