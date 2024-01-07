@@ -1,5 +1,8 @@
 import React from 'react';
 
+// database
+import * as DataBase from './4_functions/1_databse_functions';
+
 // components
 // ----------------------------------------------------------------------
 import {
@@ -11,7 +14,6 @@ import {
   TouchableOpacity,
   ScrollView,
   Image,
-  AsyncStorage,
 } from 'react-native';
 // ----------------------------------------------------------------------
 
@@ -48,6 +50,11 @@ export default () => {
   }
  
   const formattedDate = getFormattedDate();
+  // ----------------------------------------------------------------------
+
+  // database
+  // ----------------------------------------------------------------------
+  DataBase.ReadDataBase(result => {});
   // ----------------------------------------------------------------------
 
 
@@ -97,38 +104,36 @@ export default () => {
           
         <ScrollView style={HomeStyle.roll_tasks}>
 
+          
+
           {/* List of tasks*/}
-          <View style={HomeStyle.taskinserted}>
+          {
+            <View style={HomeStyle.taskinserted}>
 
-            <View style={HomeStyle.taskdescript}>
-              <Text
-                style={HomeStyle.taskdescript_txt}
-                numberOfLines={1}
-                ellipsizeMode="tail"
+              <View style={HomeStyle.taskdescript}>
+                <Text
+                  style={HomeStyle.taskdescript_txt}
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                >
+                  {'sair PassEar com O cachoRRo as 09:00h.'.charAt(0).toUpperCase() + 'sair PassEar com O cachoRRo as 09:00h'.slice(1).toLowerCase()}
+                </Text>
+              </View>
+
+              <TouchableOpacity
+                style={HomeStyle.btndeletetask}
+                onPress={ () => alert('testeee!')}
               >
-                {'sair PassEar com O cachoRRo as 09:00h.'.charAt(0).toUpperCase() + 'sair PassEar com O cachoRRo as 09:00h'.slice(1).toLowerCase()}
-              </Text>
+                <Image
+                  source={require('./3_imgs/deleteicon.png')}
+                  style={HomeStyle.deleteicon}
+                />
+
+
+              </TouchableOpacity>
+
             </View>
-
-            <TouchableOpacity
-              style={HomeStyle.btndeletetask}
-              onPress={ () => alert('testeee!')}
-            >
-              <Image
-                source={require('./3_imgs/deleteicon.png')}
-                style={HomeStyle.deleteicon}
-              />
-
-
-                {
-
-                    
-                }
-
-
-            </TouchableOpacity>
-
-          </View>
+          }
 
         </ScrollView>
 

@@ -9,12 +9,6 @@ const App = () => {
 
   // create db if not exists
   DataBase.openDatabaseAndCreateTable();
-  
-  DataBase.ReadDataBase(result => {
-    console.log(result);
-  });
-
-  DataBase.ReadDataBase();
 
   return (
     <HomeScreen />

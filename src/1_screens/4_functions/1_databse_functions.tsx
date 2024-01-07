@@ -14,6 +14,19 @@ const db = SQLite.openDatabase({ name: `${db_name}.db`, location: 'default' });
 // -------------------------------------------------------
 
 
+/*
+// **** teste inserção db
+// -------------------------------------------------------
+db.transaction(
+    (tx) => {
+        tx.executeSql(
+        `DELETE FROM ${table_name}`,
+        );
+    }
+);
+// -------------------------------------------------------
+*/
+
 // create database, table and column
 // -------------------------------------------------------
 export const openDatabaseAndCreateTable = () => {
@@ -35,7 +48,7 @@ export const ReadDataBase = (callback) => {
     tx.executeSql(
         `SELECT ${column_name_1} FROM ${table_name}`,
         [],
-        (results) => {
+        (tx, results) => {
             const data = [];
             
             for (let i = 0; i < results.rows.length; i++) {
@@ -48,7 +61,6 @@ export const ReadDataBase = (callback) => {
     });
 };
 // -------------------------------------------------------
-
 
 // create item in db
 // -------------------------------------------------------
