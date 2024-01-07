@@ -26,11 +26,6 @@ import HomeStyle from './1_stylesheet/HomeStyle';
 // ----------------------------------------------------------------------
 export default () => {
 
-  // border focus input task
-  // ----------------------------------------------------------------------
-  const [isFocused, setFocused] = React.useState(false);
-  // ----------------------------------------------------------------------
-
   // date
   // ----------------------------------------------------------------------
   function getFormattedDate() {
@@ -51,10 +46,16 @@ export default () => {
  
   const formattedDate = getFormattedDate();
   // ----------------------------------------------------------------------
+  
+  // input task
+  // ----------------------------------------------------------------------
+  const [isFocused, setFocused] = React.useState(false);
+  const [taskInput, setTaskInput] = React.useState('');
+  // ----------------------------------------------------------------------
 
   // database
   // ----------------------------------------------------------------------
-  DataBase.ReadDataBase(result => {});
+  DataBase.ReadDataBase(result => {console.log(result)});
   // ----------------------------------------------------------------------
 
 
@@ -84,13 +85,16 @@ export default () => {
             placeholderTextColor={HomeStyle.itask_placeholder.color}
 
 
+            onChangeText={(text) => setTaskInput(text)}
+
+
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
           /> 
 
           <TouchableOpacity
             style={HomeStyle.btnitask}
-            onPress={ () => alert('testeee!')}
+            onPress={ () => DataBase.CreateItemDataBase(taskInput)}
           >
 
             <View style={HomeStyle.btnitask_line1} ></View>
