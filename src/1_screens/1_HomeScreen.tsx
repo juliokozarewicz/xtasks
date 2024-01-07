@@ -27,14 +27,6 @@ import HomeStyle from './1_stylesheet/HomeStyle';
 // ----------------------------------------------------------------------
 export default () => {
 
-  // refresh funv
-  // ----------------------------------------------------------------------
-  const [refreshCount, setRefreshCount] = React.useState(0);
-  const handleRefresh = () => {
-    setRefreshCount((prevCount) => prevCount + 1);
-  };
-  // ----------------------------------------------------------------------
-
   // date
   // ----------------------------------------------------------------------
   function getFormattedDate() {
@@ -60,6 +52,11 @@ export default () => {
   // ----------------------------------------------------------------------
   const [isFocused, setFocused] = React.useState(false);
   const [taskInput, setTaskInput] = React.useState('');
+  const [refreshInput, setRefreshInput] = React.useState(0);
+  
+  const handleRefresh = () => {
+    setRefreshInput((prevCount) => prevCount + 1);
+  };
   // ----------------------------------------------------------------------
 
   // database
@@ -70,7 +67,7 @@ export default () => {
 
   return (
   
-    <View key={refreshCount} style={HomeStyle.allcontent}>
+    <View key={refreshInput} style={HomeStyle.allcontent}>
 
       <SafeAreaView style={HomeStyle.safeareaview}>
 
@@ -89,7 +86,7 @@ export default () => {
                 isFocused ? HomeStyle.itaskFocused : null,
               ]
             }
-              
+
             placeholder='Insira uma tarefa...'
             placeholderTextColor={HomeStyle.itask_placeholder.color}
 
