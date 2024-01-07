@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 // database
 import * as DataBase from './4_functions/1_databse_functions';
 
@@ -25,6 +26,13 @@ import HomeStyle from './1_stylesheet/HomeStyle';
 // export app function
 // ----------------------------------------------------------------------
 export default () => {
+
+  // refresh funv
+  // ----------------------------------------------------------------------
+  const handleRefresh = () => {
+    console.log('Refresh realizado');
+  };
+  // ----------------------------------------------------------------------
 
   // date
   // ----------------------------------------------------------------------
@@ -94,7 +102,10 @@ export default () => {
 
           <TouchableOpacity
             style={HomeStyle.btnitask}
-            onPress={ () => DataBase.CreateItemDataBase(taskInput)}
+            onPress={() => {
+              DataBase.CreateItemDataBase(taskInput);
+              handleRefresh();
+            }}
           >
 
             <View style={HomeStyle.btnitask_line1} ></View>
