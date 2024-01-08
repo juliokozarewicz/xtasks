@@ -15,18 +15,19 @@ const db = SQLite.openDatabase({ name: `${db_name}.db`, location: 'default' });
 // -------------------------------------------------------
 
 
-/*
+
 // **** teste inserção db
 // -------------------------------------------------------
-db.transaction(
-    (tx) => {
-        tx.executeSql(
-        `DELETE FROM ${table_name}`,
-        );
-    }
-);
+export const deletAll = () => {
+  db.transaction(
+      (tx) => {
+          tx.executeSql(
+          `DELETE FROM ${table_name}`,
+          );
+      }
+  );
+};
 // -------------------------------------------------------
-*/
 
 // create database, table and column
 // -------------------------------------------------------

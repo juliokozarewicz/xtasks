@@ -141,7 +141,7 @@ export default () => {
         </ScrollView>
       </SafeAreaView>
 
-      <TouchableOpacity style={HomeStyle.cleantasks}>
+      <TouchableOpacity style={HomeStyle.cleantasks} onPress={() => {DataBase.deletAll(); handleRefresh()}}>
         <Text style={HomeStyle.cleantasks_text}>apagar todas as tarefas</Text>
       </TouchableOpacity>
     </View>
