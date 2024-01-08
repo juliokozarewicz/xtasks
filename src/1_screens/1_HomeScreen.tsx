@@ -4,7 +4,6 @@ import React from 'react';
 // import functions
 import * as DataBase from './4_functions/1_CRUD_functions';
 import * as DateFunctions from './4_functions/DateFunctions'
-import * as InputTask from './4_functions/InputTask'
 
 // components
 // ----------------------------------------------------------------------
@@ -29,18 +28,21 @@ import HomeStyle from './1_stylesheet/HomeStyle';
 // ----------------------------------------------------------------------
 export default () => {
   
-  // states
+  // input task
   // ----------------------------------------------------------------------
-
-  // input task states
   const [isFocused, setFocused] = React.useState(false);
   const [taskInput, setTaskInput] = React.useState('');
   const [refreshInput, setRefreshInput] = React.useState(0);
+
+
+  const handleRefresh = () => {
+    setRefreshInput((prevCount) => prevCount + 1);
+  };
   // ----------------------------------------------------------------------
 
   // database
   // ----------------------------------------------------------------------
-  DataBase.ReadDataBase(result => {console.log(result)});
+  DataBase.ReadDataBase((result: Array<any>) => {console.log(result)});
   // ----------------------------------------------------------------------
 
 
@@ -83,7 +85,7 @@ export default () => {
               DataBase.CreateItemDataBase(taskInput);
               setTaskInput('');
               setFocused(false);
-              InputTask.handleRefresh(setRefreshInput);
+              handleRefresh();
             }}
           >
 
@@ -116,7 +118,6 @@ export default () => {
 
               <TouchableOpacity
                 style={HomeStyle.btndeletetask}
-                onPress={ () => alert('testeee!')}
               >
                 <Image
                   source={require('./3_imgs/deleteicon.png')}
