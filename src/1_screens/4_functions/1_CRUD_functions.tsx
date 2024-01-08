@@ -94,3 +94,16 @@ export const CreateItemDataBase = (task: string, description: string) => {
     
 };
 // -------------------------------------------------------
+
+
+// delete item db
+// -------------------------------------------------------
+export const deleteItemFromDatabase = (itemId) => {
+  db.transaction((tx) => {
+    tx.executeSql(
+      `DELETE FROM ${table_name} WHERE id = ?`,
+      [itemId],
+    );
+  });
+};
+// -------------------------------------------------------

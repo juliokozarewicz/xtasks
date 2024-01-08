@@ -26,7 +26,7 @@ import HomeStyle from './1_stylesheet/HomeStyle';
 
 // Tasklist component
 // ----------------------------------------------------------------------------------------------
-const TaskList = ({ tasksvar }) => (
+const TaskList = ({ tasksvar, handleDeleteItem, handleRefresh }) => (
   <>
     {
       tasksvar.map((item, index) => (
@@ -43,6 +43,12 @@ const TaskList = ({ tasksvar }) => (
 
           <TouchableOpacity
             style={HomeStyle.btndeletetask}
+            onPress={
+              () => {
+                handleDeleteItem(item.id);
+                handleRefresh();
+              }
+            }
           >
             <Image
               source={require('./3_imgs/deleteicon.png')}
@@ -67,7 +73,6 @@ export default () => {
   const [isFocused, setFocused] = React.useState(false);
   const [taskInput, setTaskInput] = React.useState('');
   const [refreshInput, setRefreshInput] = React.useState(0);
-  const [tasks, setTasks] = React.useState([]);
   
   const handleRefresh = () => {
     setRefreshInput((prevCount) => prevCount + 1);
@@ -76,6 +81,8 @@ export default () => {
 
   // get data from db
   // --------------------------------------------------
+  const [tasks, setTasks] = React.useState([]);
+
   async function fetchData() {
     try {
       const result = await DataBase.ReadDataBase();
@@ -127,7 +134,7 @@ export default () => {
         <Text style={HomeStyle.pendente}>Pendentes:</Text>
         <ScrollView style={HomeStyle.roll_tasks}>
           {/* List of tasks*/}
-          <TaskList tasksvar={tasks} />
+          <TaskList tasksvar={tasks}  handleDeleteItem={DataBase.deleteItemFromDatabase} handleRefresh={handleRefresh} />
         </ScrollView>
       </SafeAreaView>
 
