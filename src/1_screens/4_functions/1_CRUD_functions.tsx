@@ -14,9 +14,7 @@ const column_name_2 = 'descricao';
 const db = SQLite.openDatabase({ name: `${db_name}.db`, location: 'default' });
 // -------------------------------------------------------
 
-
-
-// **** teste inserção db
+// delete all tasks
 // -------------------------------------------------------
 export const deletAll = () => {
   db.transaction(
@@ -46,7 +44,6 @@ export const openDatabaseAndCreateTable = () => {
 };
 // -------------------------------------------------------
 
-
 // read data from db
 // -------------------------------------------------------
 export const ReadDataBase = () => {
@@ -73,7 +70,6 @@ export const ReadDataBase = () => {
 };
 // -------------------------------------------------------
 
-
 // create item in db
 // -------------------------------------------------------
 export const CreateItemDataBase = (task: string, description: string) => {
@@ -95,7 +91,6 @@ export const CreateItemDataBase = (task: string, description: string) => {
     
 };
 // -------------------------------------------------------
-
 
 // delete item db
 // -------------------------------------------------------
