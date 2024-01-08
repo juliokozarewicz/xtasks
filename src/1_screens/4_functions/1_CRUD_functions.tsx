@@ -67,12 +67,20 @@ export const ReadDataBase = (callback) => {
 // -------------------------------------------------------
 export const CreateItemDataBase = (task) => {
 
-    db.transaction((tx) => {
-        tx.executeSql(
-        `INSERT INTO ${table_name} (${column_name_1}) VALUES (?)`,
-        [`${task}`],
-        );
-    });
+    if (task.trim() === '') {
+
+      alert('Insira uma tarefa válida!');
+    
+    } else {
+
+      db.transaction((tx) => {
+          tx.executeSql(
+          `INSERT INTO ${table_name} (${column_name_1}) VALUES (?)`,
+          [`${task}`],
+          );
+      });
+
+    };
     
 };
 // -------------------------------------------------------
