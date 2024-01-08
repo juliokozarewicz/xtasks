@@ -26,10 +26,10 @@ import HomeStyle from './1_stylesheet/HomeStyle';
 
 // Tasklist component
 // ----------------------------------------------------------------------------------------------
-const TaskList = ({ tasks }) => (
+const TaskList = ({ tasksvar }) => (
   <>
     {
-      tasks.map((item, index) => (
+      tasksvar.map((item, index) => (
         <View key={index} style={HomeStyle.taskinserted}>
           <View style={HomeStyle.taskdescript}>
             <Text
@@ -127,7 +127,7 @@ export default () => {
         <Text style={HomeStyle.pendente}>Pendentes:</Text>
         <ScrollView style={HomeStyle.roll_tasks}>
           {/* List of tasks*/}
-          <TaskList tasks={tasks} />
+          <TaskList tasksvar={tasks} />
         </ScrollView>
       </SafeAreaView>
 
