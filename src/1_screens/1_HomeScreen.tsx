@@ -67,7 +67,6 @@ const TaskList = ({ tasksvar, handleDeleteItem, handleRefresh }) => (
 // ----------------------------------------------------------------------------------------------
 export default () => {
 
-
   // input task
   // --------------------------------------------------
   const [isFocused, setFocused] = React.useState(false);
