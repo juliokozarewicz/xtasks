@@ -1,5 +1,5 @@
 // import from react
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 // import components
 import {
@@ -64,10 +64,10 @@ export default () => {
 
   // input task
   // --------------------------------------------------
-  const [isFocused, setFocused] = useState(false);
-  const [taskInput, setTaskInput] = useState('');
-  const [refreshInput, setRefreshInput] = useState(0);
-  const [tasks, setTasks] = useState([]);
+  const [isFocused, setFocused] = React.useState(false);
+  const [taskInput, setTaskInput] = React.useState('');
+  const [refreshInput, setRefreshInput] = React.useState(0);
+  const [tasks, setTasks] = React.useState([]);
   
   const handleRefresh = () => {
     setRefreshInput((prevCount) => prevCount + 1);
@@ -85,7 +85,7 @@ export default () => {
     }
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     fetchData();
   }, [refreshInput]);
   // --------------------------------------------------
