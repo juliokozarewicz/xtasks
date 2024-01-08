@@ -1,47 +1,81 @@
+// import from react
 import React, { useState, useEffect } from 'react';
-import { StatusBar, View, SafeAreaView, Text, TextInput, TouchableOpacity, ScrollView, Image } from 'react-native';
+
+// import components
+import {
+  StatusBar,
+  View,
+  SafeAreaView,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  ScrollView,
+  Image,
+} from 'react-native';
+
+// import databse CRUD
 import * as DataBase from './4_functions/1_CRUD_functions';
+
+// import date formats
 import * as DateFunctions from './4_functions/DateFunctions';
+
+// import style sheet
 import HomeStyle from './1_stylesheet/HomeStyle';
 
-// Adicionando o componente TaskList
+
+
+// Tasklist component
+// ----------------------------------------------------------------------------------------------
 const TaskList = ({ tasks }) => (
   <>
-    {tasks.map((item, index) => (
-      <View key={index} style={HomeStyle.taskinserted}>
-        <View style={HomeStyle.taskdescript}>
-          <Text
-            style={HomeStyle.taskdescript_txt}
-            numberOfLines={1}
-            ellipsizeMode="tail"
-          >
-            {item.tarefa.charAt(0).toUpperCase() + item.tarefa.slice(1).toLowerCase()}
-          </Text>
-        </View>
+    {
+      tasks.map((item, index) => (
+        <View key={index} style={HomeStyle.taskinserted}>
+          <View style={HomeStyle.taskdescript}>
+            <Text
+              style={HomeStyle.taskdescript_txt}
+              numberOfLines={1}
+              ellipsizeMode="tail"
+            >
+              {item.tarefa.charAt(0).toUpperCase() + item.tarefa.slice(1).toLowerCase()}
+            </Text>
+          </View>
 
-        <TouchableOpacity
-          style={HomeStyle.btndeletetask}
-        >
-          <Image
-            source={require('./3_imgs/deleteicon.png')}
-            style={HomeStyle.deleteicon}
-          />
-        </TouchableOpacity>
-      </View>
-    ))}
+          <TouchableOpacity
+            style={HomeStyle.btndeletetask}
+          >
+            <Image
+              source={require('./3_imgs/deleteicon.png')}
+              style={HomeStyle.deleteicon}
+            />
+          </TouchableOpacity>
+        </View>
+      ))
+    }
   </>
 );
+// ----------------------------------------------------------------------------------------------
 
+
+// App
+// ----------------------------------------------------------------------------------------------
 export default () => {
+
+
+  // input task
+  // --------------------------------------------------
   const [isFocused, setFocused] = useState(false);
   const [taskInput, setTaskInput] = useState('');
   const [refreshInput, setRefreshInput] = useState(0);
   const [tasks, setTasks] = useState([]);
+  
+  const handleRefresh = () => {
+    setRefreshInput((prevCount) => prevCount + 1);
+  };
+  // --------------------------------------------------
 
-  useEffect(() => {
-    fetchData();
-  }, [refreshInput]);
-
+  // get data from db
+  // --------------------------------------------------
   async function fetchData() {
     try {
       const result = await DataBase.ReadDataBase();
@@ -51,9 +85,10 @@ export default () => {
     }
   }
 
-  const handleRefresh = () => {
-    setRefreshInput((prevCount) => prevCount + 1);
-  };
+  useEffect(() => {
+    fetchData();
+  }, [refreshInput]);
+  // --------------------------------------------------
 
   return (
     <View key={refreshInput} style={HomeStyle.allcontent}>
@@ -102,3 +137,4 @@ export default () => {
     </View>
   );
 };
+// ----------------------------------------------------------------------------------------------
