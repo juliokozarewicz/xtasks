@@ -75,7 +75,7 @@ export default StyleSheet.create(
     },
 
     roll_tasks: {
-      marginBottom: 58,
+      marginBottom: 70,
     },
     
     itask: {
@@ -204,6 +204,7 @@ export default StyleSheet.create(
       backgroundColor: colors.gray2,
 
       paddingLeft: 15,
+      paddingRight: 10,
 
       borderRadius: 10,
 
