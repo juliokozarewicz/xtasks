@@ -242,7 +242,34 @@ export default StyleSheet.create(
     deleteicon: {
       width: 25,
       height: 25,
-    }
+    },
+
+    loadscreen: {
+      zIndex: 1000,
+      position: 'absolute',
+
+      width: '100%',
+      height: '100%',
+
+      backgroundColor: colors.green,
+
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
+    loadscreenText: {
+      marginTop: 10,
+
+      fontFamily: 'textbold',
+      fontSize: 15,
+
+      color: colors.black,
+    },
+
+    loadscreenlogo: {
+      width: 80,
+      height: 80,
+    },
 
   }
 

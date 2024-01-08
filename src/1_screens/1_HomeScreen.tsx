@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
   ScrollView,
   Image,
+  Alert,
 } from 'react-native';
 
 // import databse CRUD
@@ -62,6 +63,37 @@ const TaskList = ({ tasksvar, handleDeleteItem, handleRefresh }) => (
 );
 // ----------------------------------------------------------------------------------------------
 
+// load screen
+// ----------------------------------------------------------------------------------------------
+const LoadScreen = () => {
+  const [isVisible, setIsVisible] = React.useState(true);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(false); // Define isVisible como false após 2 segundos
+    }, 3000);
+
+    // Limpa o timer se o componente for desmontado antes do término
+    return () => clearTimeout(timer);
+
+  }, []); // O array de dependências vazio garante que o useEffect seja executado apenas uma vez ao montar o componente
+
+  return (
+    <>
+      {isVisible ? (
+        <View style={HomeStyle.loadscreen}>
+          <Image
+            source={require('./3_imgs/logo.png')}
+            style={HomeStyle.loadscreenlogo}
+          />
+          <Text style={HomeStyle.loadscreenText}>Aguarde...</Text>
+        </View>
+      ) : null}
+    </>
+  );
+};
+// ----------------------------------------------------------------------------------------------
+
 
 // App
 // ----------------------------------------------------------------------------------------------
@@ -100,7 +132,11 @@ export default () => {
   // --------------------------------------------------
 
   return (
+
     <View key={refreshInput} style={HomeStyle.allcontent}>
+
+      <LoadScreen />
+
       <SafeAreaView style={HomeStyle.safeareaview}>
         <StatusBar barStyle="dark-content" backgroundColor={HomeStyle.statusbar.backgroundColor} />
         <Text style={HomeStyle.titletop}>XTASKS</Text>
