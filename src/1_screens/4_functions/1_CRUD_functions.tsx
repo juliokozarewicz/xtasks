@@ -75,8 +75,6 @@ export const ReadDataBase = () => {
 export const CreateItemDataBase = (task: string, description: string) => {
 
     if (task.trim() === '') {
-
-      alert('Insira uma tarefa válida!');
     
     } else {
 
