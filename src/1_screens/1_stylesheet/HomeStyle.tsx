@@ -13,7 +13,6 @@ export default StyleSheet.create(
       flex: 1,
       
       alignItems: 'center',
-      justifyContent: 'start',
       
       backgroundColor: colors.gray1,
     },
@@ -84,7 +83,6 @@ export default StyleSheet.create(
       flex: 1,
       
       backgroundColor: colors.gray1,
-      borderColor: 'red',
       color: colors.gray5,
 
       fontFamily: 'textbold',
@@ -92,7 +90,6 @@ export default StyleSheet.create(
 
       paddingLeft: 15,
 
-      borderRadius: 10,
       borderWidth: 1,
       borderColor: colors.gray3,
       
@@ -205,9 +202,6 @@ export default StyleSheet.create(
       height: '100%',
       
       backgroundColor: colors.gray2,
-      color: colors.gray5,
-
-      fontSize: 12,
 
       paddingLeft: 15,
 
