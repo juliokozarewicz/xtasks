@@ -73,7 +73,10 @@ export default () => {
   const [isFocused, setFocused] = React.useState(false);
   const [taskInput, setTaskInput] = React.useState('');
   const [refreshInput, setRefreshInput] = React.useState(0);
-  
+  // --------------------------------------------------
+
+  // Refresh
+  // --------------------------------------------------
   const handleRefresh = () => {
     setRefreshInput((prevCount) => prevCount + 1);
   };
