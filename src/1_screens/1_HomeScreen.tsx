@@ -133,11 +133,11 @@ export default () => {
 
   return (
 
-    <View key={refreshInput} style={HomeStyle.allcontent}>
+    <View style={HomeStyle.allcontent}>
 
       <LoadScreen />
 
-      <SafeAreaView style={HomeStyle.safeareaview}>
+      <SafeAreaView key={refreshInput} style={HomeStyle.safeareaview}>
         <StatusBar barStyle="dark-content" backgroundColor={HomeStyle.statusbar.backgroundColor} />
         <Text style={HomeStyle.titletop}>XTASKS</Text>
         <Text style={HomeStyle.datetime}>{DateFunctions.getFormattedDate()}</Text>
