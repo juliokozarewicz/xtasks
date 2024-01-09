@@ -9,10 +9,10 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
+  TouchableWithoutFeedback,
   ScrollView,
   Image,
-  Alert,
-} from 'react-native';
+  } from 'react-native';
 
 // import databse CRUD
 import * as DataBase from './4_functions/1_CRUD_functions';
@@ -108,11 +108,18 @@ const DeleteAll = ({ handleRefresh }) => {
     setDellAll(false);
   };
 
+  const notexcludeAllconfirm = () => {
+    handleRefresh();
+    setDellAll(false);
+  };
+
   return (
     <>
       {dellAll ? (
         <View style={ dellAll ? HomeStyle.framedeleteall : null}>
-          <View style={HomeStyle.backgrounddeleteall}></View>
+          <TouchableWithoutFeedback onPress={() => notexcludeAllconfirm()}>
+            <View style={HomeStyle.backgrounddeleteall}></View>
+          </TouchableWithoutFeedback>
           <View style={HomeStyle.boxmessagedeleteaall}>
             <Text style={HomeStyle.boxmessagedeleteaalltitle}>Deseja realmente apagar todas as tarefas?</Text>
             <TouchableOpacity style={HomeStyle.deleteallbtnconfirm} onPress={() => excludeAllconfirm()}>
@@ -123,6 +130,7 @@ const DeleteAll = ({ handleRefresh }) => {
       )
       
       :
+
         <TouchableOpacity style={HomeStyle.cleantasks} onPress={() => setDellAll(true) }>
           <Text style={HomeStyle.cleantasks_text}>apagar todas as tarefas</Text>
         </TouchableOpacity>}
