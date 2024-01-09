@@ -70,13 +70,12 @@ const LoadScreen = () => {
 
   React.useEffect(() => {
     const timer = setTimeout(() => {
-      setIsVisible(false); // Define isVisible como false após 2 segundos
+      setIsVisible(false);
     }, 3000);
 
-    // Limpa o timer se o componente for desmontado antes do término
     return () => clearTimeout(timer);
 
-  }, []); // O array de dependências vazio garante que o useEffect seja executado apenas uma vez ao montar o componente
+  }, []);
 
   return (
     <>
