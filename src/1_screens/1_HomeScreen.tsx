@@ -171,7 +171,11 @@ export default () => {
         <Text style={HomeStyle.pendente}>Pendentes:</Text>
         <ScrollView style={HomeStyle.roll_tasks}>
           {/* List of tasks*/}
-          <TaskList tasksvar={tasks}  handleDeleteItem={DataBase.deleteItemFromDatabase} handleRefresh={handleRefresh} />
+          <TaskList
+            tasksvar={tasks}
+            handleDeleteItem={DataBase.deleteItemFromDatabase}
+            handleRefresh={handleRefresh}
+          />
         </ScrollView>
       </SafeAreaView>
 

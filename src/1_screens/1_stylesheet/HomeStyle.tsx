@@ -261,9 +261,9 @@ export default StyleSheet.create(
       marginTop: 10,
 
       fontFamily: 'textbold',
-      fontSize: 15,
+      fontSize: 12,
 
-      color: colors.black,
+      color: colors.purple,
     },
 
     loadscreenlogo: {
