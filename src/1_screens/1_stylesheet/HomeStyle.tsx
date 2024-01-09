@@ -297,6 +297,20 @@ export default StyleSheet.create(
       opacity: 0.8,
     },
 
+    backgrounddeletealltxt: {
+      zIndex: 93,
+      position: 'absolute',
+      right: 30,
+      top: 30,
+
+      fontFamily: 'textbold',
+      fontSize: 12,
+
+      color: colors.gray2,
+
+      textAlign: 'center',
+    },
+
     boxmessagedeleteaall: {
       zIndex: 92,
       position: 'absolute',

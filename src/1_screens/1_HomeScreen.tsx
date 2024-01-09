@@ -118,7 +118,9 @@ const DeleteAll = ({ handleRefresh }) => {
       {dellAll ? (
         <View style={ dellAll ? HomeStyle.framedeleteall : null}>
           <TouchableWithoutFeedback onPress={() => notexcludeAllconfirm()}>
-            <View style={HomeStyle.backgrounddeleteall}></View>
+            <View style={HomeStyle.backgrounddeleteall}>
+              <Text style={HomeStyle.backgrounddeletealltxt}>Fechar  [ x ]</Text>
+            </View>
           </TouchableWithoutFeedback>
           <View style={HomeStyle.boxmessagedeleteaall}>
             <Text style={HomeStyle.boxmessagedeleteaalltitle}>Deseja realmente apagar todas as tarefas?</Text>
