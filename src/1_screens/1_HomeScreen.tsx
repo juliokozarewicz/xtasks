@@ -101,12 +101,7 @@ const LoadScreen = () => {
 
 // delete all screen
 // ----------------------------------------------------------------------------------------------
-const DeleteAll = ({ handleRefresh }) => {  
-  const [dellAll, setDellAll] = useState(false);
-
-  const handleDeleteAll = () => {
-    setDellAll(true);
-  };
+const DeleteAll = ({ handleRefresh, dellAll, setDellAll }) => {  
 
   const excludeAllconfirm = () => {
     DataBase.deletAll();
@@ -139,9 +134,9 @@ const DeleteAll = ({ handleRefresh }) => {
       
       :
 
-        <TouchableOpacity style={HomeStyle.cleantasks} onPress={() => setDellAll(true) }>
-          <Text style={HomeStyle.cleantasks_text}>apagar todas as tarefas</Text>
-        </TouchableOpacity>}
+        null
+        
+        }
     </>
   );
 };
@@ -151,11 +146,17 @@ const DeleteAll = ({ handleRefresh }) => {
 // ----------------------------------------------------------------------------------------------
 export default () => {
 
-  // input task
+  // states
   // --------------------------------------------------
-  const [isFocused, setFocused] = useState(false);
-  const [taskInput, setTaskInput] = useState('');
-  const [refreshInput, setRefreshInput] = useState(0);
+
+    // input task
+    const [isFocused, setFocused] = useState(false);
+    const [taskInput, setTaskInput] = useState('');
+    const [refreshInput, setRefreshInput] = useState(0);
+
+    // dell all itens
+    const [dellAll, setDellAll] = useState(false);
+
   // --------------------------------------------------
 
   // Refresh
@@ -232,7 +233,11 @@ export default () => {
         </ScrollView>
       </SafeAreaView>
 
-      <DeleteAll handleRefresh={handleRefresh} />
+      <DeleteAll handleRefresh={handleRefresh} dellAll={dellAll} setDellAll={setDellAll}/>
+
+      <TouchableOpacity style={HomeStyle.cleantasks} onPress={() => {setDellAll(true)} }>
+          <Text style={HomeStyle.cleantasks_text}>apagar todas as tarefas</Text>
+      </TouchableOpacity>
 
     </View>
   );
