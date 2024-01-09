@@ -175,12 +175,12 @@ export default StyleSheet.create(
     },
 
     cleantasks_text: {
-      fontFamily: 'textbold',
+      fontFamily: 'title',
       fontSize: 12,
 
       color: 'white',
 
-      textTransform: 'capitalize',
+      textTransform: 'uppercase',
     },
     
     taskinserted: {
