@@ -329,7 +329,7 @@ export default StyleSheet.create(
       bottom: 20,
 
       width: '90%',
-      height: 220,
+      height: 180,
 
       backgroundColor: colors.gray1,
       color: colors.black,
@@ -337,7 +337,7 @@ export default StyleSheet.create(
       alignItems: 'center',
       justifyContent: 'center',
 
-      borderWidth: 5,
+      borderWidth: 4,
 
       borderColor: colors.purple,
 
@@ -351,9 +351,9 @@ export default StyleSheet.create(
       width: '70%',
 
       fontFamily: 'textbold',
-      fontSize: 16,
+      fontSize: 12,
 
-      color: colors.black,
+      color: colors.gray4,
 
       textAlign: 'center',
     },
@@ -362,9 +362,9 @@ export default StyleSheet.create(
       zIndex: 93,
       position: 'relative',
 
-      marginTop: 35,
+      marginTop: 25,
 
-      width: 180,
+      width: 150,
       height: 50,
 
       backgroundColor: colors.purple,
@@ -380,10 +380,8 @@ export default StyleSheet.create(
       zIndex: 93,
       position: 'relative',
 
-      width: '70%',
-
       fontFamily: 'title',
-      fontSize: 14,
+      fontSize: 12,
 
       color: 'white',
 
