@@ -1,5 +1,5 @@
 // import from react
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // import components
 import {
@@ -66,9 +66,9 @@ const TaskList = ({ tasksvar, handleDeleteItem, handleRefresh }) => (
 // load screen component
 // ----------------------------------------------------------------------------------------------
 const LoadScreen = () => {
-  const [isVisible, setIsVisible] = React.useState(true);
+  const [isVisible, setIsVisible] = useState(true);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
     }, 3000);
@@ -93,6 +93,43 @@ const LoadScreen = () => {
 };
 // ----------------------------------------------------------------------------------------------
 
+// delete all screen
+// ----------------------------------------------------------------------------------------------
+const DeleteAll = ({ handleRefresh }) => {  
+  const [dellAll, setDellAll] = useState(false);
+
+  const handleDeleteAll = () => {
+    setDellAll(true);
+  };
+
+  const excludeAllconfirm = () => {
+    DataBase.deletAll();
+    handleRefresh();
+    setDellAll(false);
+  };
+
+  return (
+    <>
+      {dellAll ? (
+        <View style={ dellAll ? HomeStyle.framedeleteall : null}>
+          <View style={HomeStyle.backgrounddeleteall}></View>
+          <View style={HomeStyle.boxmessagedeleteaall}>
+            <Text style={HomeStyle.boxmessagedeleteaalltitle}>Deseja realmente apagar todas as tarefas?</Text>
+            <TouchableOpacity style={HomeStyle.deleteallbtnconfirm} onPress={() => excludeAllconfirm()}>
+              <Text style={HomeStyle.deleteallbtnconfirmtext}>apagar tudo</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      )
+      
+      :
+        <TouchableOpacity style={HomeStyle.cleantasks} onPress={() => setDellAll(true) }>
+          <Text style={HomeStyle.cleantasks_text}>apagar todas as tarefas</Text>
+        </TouchableOpacity>}
+    </>
+  );
+};
+// ----------------------------------------------------------------------------------------------
 
 // App
 // ----------------------------------------------------------------------------------------------
@@ -100,9 +137,9 @@ export default () => {
 
   // input task
   // --------------------------------------------------
-  const [isFocused, setFocused] = React.useState(false);
-  const [taskInput, setTaskInput] = React.useState('');
-  const [refreshInput, setRefreshInput] = React.useState(0);
+  const [isFocused, setFocused] = useState(false);
+  const [taskInput, setTaskInput] = useState('');
+  const [refreshInput, setRefreshInput] = useState(0);
   // --------------------------------------------------
 
   // Refresh
@@ -114,7 +151,7 @@ export default () => {
 
   // get data from db
   // --------------------------------------------------
-  const [tasks, setTasks] = React.useState([]);
+  const [tasks, setTasks] = useState([]);
 
   async function fetchData() {
     try {
@@ -125,7 +162,7 @@ export default () => {
     }
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetchData();
   }, [refreshInput]);
   // --------------------------------------------------
@@ -179,9 +216,8 @@ export default () => {
         </ScrollView>
       </SafeAreaView>
 
-      <TouchableOpacity style={HomeStyle.cleantasks} onPress={() => {DataBase.deletAll(); handleRefresh()}}>
-        <Text style={HomeStyle.cleantasks_text}>apagar todas as tarefas</Text>
-      </TouchableOpacity>
+      <DeleteAll handleRefresh={handleRefresh} />
+
     </View>
   );
 };

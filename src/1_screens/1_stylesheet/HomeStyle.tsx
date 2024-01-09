@@ -245,7 +245,7 @@ export default StyleSheet.create(
     },
 
     loadscreen: {
-      zIndex: 1000,
+      zIndex: 100,
       position: 'absolute',
 
       width: '100%',
@@ -269,6 +269,99 @@ export default StyleSheet.create(
     loadscreenlogo: {
       width: 80,
       height: 80,
+    },
+
+    framedeleteall: {
+      zIndex: 90,
+      position: 'absolute',
+
+      width: '100%',
+      height: '100%',
+
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
+    backgrounddeleteall: {
+      zIndex: 90,
+      position: 'absolute',
+
+      width: '100%',
+      height: '100%',
+
+      backgroundColor: colors.black,
+
+      alignItems: 'center',
+      justifyContent: 'center',
+
+      opacity: 0.8,
+    },
+
+    boxmessagedeleteaall: {
+      zIndex: 92,
+      position: 'absolute',
+      bottom: 20,
+
+      width: '90%',
+      height: 220,
+
+      backgroundColor: colors.gray1,
+      color: colors.black,
+
+      alignItems: 'center',
+      justifyContent: 'center',
+
+      borderWidth: 5,
+
+      borderColor: colors.purple,
+
+      borderRadius: 30,
+    },
+
+    boxmessagedeleteaalltitle: {
+      zIndex: 93,
+      position: 'relative',
+
+      width: '70%',
+
+      fontFamily: 'textbold',
+      fontSize: 16,
+
+      color: colors.black,
+
+      textAlign: 'center',
+    },
+
+    deleteallbtnconfirm: {
+      zIndex: 93,
+      position: 'relative',
+
+      marginTop: 35,
+
+      width: 180,
+      height: 50,
+
+      backgroundColor: colors.purple,
+      color: 'white',
+
+      alignItems: 'center',
+      justifyContent: 'center',
+
+      borderRadius: 10,
+    },
+
+    deleteallbtnconfirmtext: {
+      zIndex: 93,
+      position: 'relative',
+
+      width: '70%',
+
+      fontFamily: 'title',
+      fontSize: 14,
+
+      color: 'white',
+
+      textAlign: 'center',
     },
 
   }
