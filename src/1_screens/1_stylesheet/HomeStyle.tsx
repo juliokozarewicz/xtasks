@@ -297,6 +297,18 @@ export default StyleSheet.create(
       opacity: 0.8,
     },
 
+    zeroitens: {
+      marginTop: 20,
+      width: '100%',
+
+      fontFamily: 'textbold',
+      fontSize: 12,
+
+      color: colors.gray3,
+
+      //textAlign:'center',
+    },
+
     backgrounddeletealltxt: {
       zIndex: 93,
       position: 'absolute',

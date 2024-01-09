@@ -30,6 +30,12 @@ import HomeStyle from './1_stylesheet/HomeStyle';
 const TaskList = ({ tasksvar, handleDeleteItem, handleRefresh }) => (
   <>
     {
+      tasksvar.length === 0 ? (
+        <Text style={HomeStyle.zeroitens}>Sem tarefas pendentes! Adicione novos itens...</Text>
+      )
+
+      :
+
       tasksvar.map((item, index) => (
         <View key={index} style={HomeStyle.taskinserted}>
           <View style={HomeStyle.taskdescript}>
