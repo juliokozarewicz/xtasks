@@ -63,7 +63,7 @@ const TaskList = ({ tasksvar, handleDeleteItem, handleRefresh }) => (
 );
 // ----------------------------------------------------------------------------------------------
 
-// load screen
+// load screen component
 // ----------------------------------------------------------------------------------------------
 const LoadScreen = () => {
   const [isVisible, setIsVisible] = React.useState(true);
