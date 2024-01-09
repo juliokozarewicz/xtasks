@@ -318,7 +318,7 @@ export default StyleSheet.create(
       fontFamily: 'textbold',
       fontSize: 12,
 
-      color: colors.gray2,
+      color: colors.gray1,
 
       textAlign: 'center',
     },
@@ -329,7 +329,7 @@ export default StyleSheet.create(
       bottom: 20,
 
       width: '90%',
-      height: 180,
+      height: 200,
 
       backgroundColor: colors.gray1,
       color: colors.black,
@@ -348,12 +348,12 @@ export default StyleSheet.create(
       zIndex: 93,
       position: 'relative',
 
-      width: '70%',
+      width: 200,
 
       fontFamily: 'textbold',
       fontSize: 12,
 
-      color: colors.gray4,
+      color: colors.purple,
 
       textAlign: 'center',
     },
@@ -362,9 +362,9 @@ export default StyleSheet.create(
       zIndex: 93,
       position: 'relative',
 
-      marginTop: 25,
+      marginTop: 45,
 
-      width: 150,
+      width: 200,
       height: 50,
 
       backgroundColor: colors.purple,
