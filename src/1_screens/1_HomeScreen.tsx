@@ -25,6 +25,9 @@ import HomeStyle from './1_stylesheet/HomeStyle';
 
 
 
+// External components (INIT)
+// ===============================
+
 // Tasklist component
 // ----------------------------------------------------------------------------------------------
 const TaskList = ({ tasksvar, handleDeleteItem, handleRefresh }) => (
@@ -131,7 +134,7 @@ const DeleteAll = ({ handleRefresh, dellAll, setDellAll }) => {
           </View>
         </View>
       )
-      
+
       :
 
         null
@@ -141,6 +144,10 @@ const DeleteAll = ({ handleRefresh, dellAll, setDellAll }) => {
   );
 };
 // ----------------------------------------------------------------------------------------------
+
+// ===============================
+// External components (END)
+
 
 // App
 // ----------------------------------------------------------------------------------------------
