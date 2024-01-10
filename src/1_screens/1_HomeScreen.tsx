@@ -57,7 +57,11 @@ const TaskList = ({ tasksvar, setDellOne, setItemDellOne }) => (
             onPress={
               () => {
                 setDellOne(true);
-                setItemDellOne(item.tarefa);
+                setItemDellOne(
+                  {
+                    "tarefa": item.tarefa,
+                    "id": item.id,
+                  });
               }
             }
           >
@@ -174,13 +178,12 @@ const DeleteAll = ({ handleRefresh, dellAll, setDellAll }) => {
 };
 // ----------------------------------------------------------------------------------------------
 
-
-
 // delete one
 // ----------------------------------------------------------------------------------------------
-const DeleteOneItem = ({dellOne, setDellOne, handleRefresh, tarefa}) => {
+const DeleteOneItem = ({dellOne, setDellOne, handleRefresh, item}) => {
 
   const excludeAllconfirm = () => {
+    DataBase.deleteItemFromDatabase(item.id);
     handleRefresh();
     setDellOne(false);
   };
@@ -209,7 +212,7 @@ const DeleteOneItem = ({dellOne, setDellOne, handleRefresh, tarefa}) => {
               style={HomeStyle.deleteiconall}
             />
             <Text style={HomeStyle.boxmessagedeleteaalltitle}>A tarefa foi concluída?</Text>
-            <Text style={HomeStyle.boxmessagedeleteaOnetitle}>"{tarefa}"</Text>
+            <Text style={HomeStyle.boxmessagedeleteaOnetitle}>"{item.tarefa}"</Text>
             <TouchableOpacity style={HomeStyle.deleteOnebtnconfirm} onPress={() => excludeAllconfirm()}>
               <Text style={HomeStyle.deleteallbtnconfirmtext}>apagar</Text>
             </TouchableOpacity>
@@ -334,7 +337,7 @@ export default () => {
       </SafeAreaView>
 
       <DeleteAll handleRefresh={handleRefresh} dellAll={dellAll} setDellAll={setDellAll}/>
-      <DeleteOneItem handleRefresh={handleRefresh} dellOne={dellOne} setDellOne={setDellOne} tarefa={itemDellOne}/>
+      <DeleteOneItem handleRefresh={handleRefresh} dellOne={dellOne} setDellOne={setDellOne} item={itemDellOne}/>
 
       <TouchableOpacity style={HomeStyle.cleantasks} onPress={() => {setDellAll(true)} }>
           <Text style={HomeStyle.cleantasks_text}>apagar todas as tarefas</Text>
