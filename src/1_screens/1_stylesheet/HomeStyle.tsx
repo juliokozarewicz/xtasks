@@ -365,11 +365,45 @@ export default StyleSheet.create(
       textAlign: 'center',
     },
 
+    boxmessagedeleteaOnetitle: {
+      zIndex: 93,
+      position: 'relative',
+
+      marginTop: 15,
+
+      width: '80%',
+
+      fontFamily: 'textbold',
+      fontSize: 12,
+
+      color: colors.gray3,
+
+      textAlign: 'center',
+    },
+
     deleteallbtnconfirm: {
       zIndex: 93,
       position: 'relative',
 
       marginTop: 50,
+
+      width: '90%',
+      height: 50,
+
+      backgroundColor: colors.purple,
+      color: 'white',
+
+      alignItems: 'center',
+      justifyContent: 'center',
+
+      borderRadius: 10,
+    },
+
+    deleteOnebtnconfirm: {
+      zIndex: 93,
+      position: 'relative',
+
+      marginTop: 30,
 
       width: '90%',
       height: 50,

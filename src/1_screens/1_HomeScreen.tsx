@@ -30,7 +30,7 @@ import HomeStyle from './1_stylesheet/HomeStyle';
 
 // Tasklist component
 // ----------------------------------------------------------------------------------------------
-const TaskList = ({ tasksvar, handleDeleteItem, handleRefresh }) => (
+const TaskList = ({ tasksvar, setDellOne }) => (
   <>
     {
 
@@ -56,8 +56,7 @@ const TaskList = ({ tasksvar, handleDeleteItem, handleRefresh }) => (
             style={HomeStyle.btndeletetask}
             onPress={
               () => {
-                handleDeleteItem(item.id);
-                handleRefresh();
+                setDellOne(true)               
               }
             }
           >
@@ -139,7 +138,7 @@ const DeleteAll = ({ handleRefresh, dellAll, setDellAll }) => {
       {
       
       dellAll ? (
-        <View style={ dellAll ? HomeStyle.framedeleteall : null}>
+        <View style={HomeStyle.framedeleteall}>
           <TouchableWithoutFeedback onPress={() => notexcludeAllconfirm()}>
             <View style={HomeStyle.backgrounddeleteall}>
               <Text style={HomeStyle.backgrounddeletealltxt}>Fechar  [ x ]</Text>
@@ -153,6 +152,77 @@ const DeleteAll = ({ handleRefresh, dellAll, setDellAll }) => {
             <Text style={HomeStyle.boxmessagedeleteaalltitle}>Deseja realmente apagar todas as tarefas?</Text>
             <TouchableOpacity style={HomeStyle.deleteallbtnconfirm} onPress={() => excludeAllconfirm()}>
               <Text style={HomeStyle.deleteallbtnconfirmtext}>apagar tudo</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={HomeStyle.cancelalllbtnconfirm} onPress={() => notexcludeAllconfirm()}>
+              <Text style={HomeStyle.cancelalllbtnconfirmtxt}>cancelar</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      )
+
+      :
+
+        null
+        
+        }
+
+    </>
+
+  );
+  
+};
+// ----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// delete one
+// ----------------------------------------------------------------------------------------------
+const DeleteOneItem = ({dellOne, setDellOne, handleRefresh}) => {
+
+  const excludeAllconfirm = () => {
+    handleRefresh();
+    setDellOne(false);
+  };
+
+  const notexcludeAllconfirm = () => {
+    handleRefresh();
+    setDellOne(false);
+  };
+
+
+  return (
+    <>
+
+      {
+      
+      dellOne ? (
+        <View style={ HomeStyle.framedeleteall }>
+          <TouchableWithoutFeedback onPress={() => notexcludeAllconfirm()}>
+            <View style={HomeStyle.backgrounddeleteall}>
+              <Text style={HomeStyle.backgrounddeletealltxt}>Fechar  [ x ]</Text>
+            </View>
+          </TouchableWithoutFeedback>
+          <View style={HomeStyle.boxmessagedeleteaall}>
+            <Image
+              source={require('./3_imgs/deleteicongreen.png')}
+              style={HomeStyle.deleteiconall}
+            />
+            <Text style={HomeStyle.boxmessagedeleteaalltitle}>Apagar a Tarefa:</Text>
+            <Text style={HomeStyle.boxmessagedeleteaOnetitle}>"Resolver a questão de um item para apagar uma tarefa isolada."</Text>
+            <TouchableOpacity style={HomeStyle.deleteOnebtnconfirm} onPress={() => excludeAllconfirm()}>
+              <Text style={HomeStyle.deleteallbtnconfirmtext}>apagar</Text>
             </TouchableOpacity>
             <TouchableOpacity style={HomeStyle.cancelalllbtnconfirm} onPress={() => notexcludeAllconfirm()}>
               <Text style={HomeStyle.cancelalllbtnconfirmtxt}>cancelar</Text>
@@ -192,6 +262,9 @@ export default () => {
 
     // dell all itens
     const [dellAll, setDellAll] = useState(false);
+
+    // dell one
+    const [dellOne, setDellOne] = useState(false);
 
   // --------------------------------------------------
 
@@ -263,13 +336,14 @@ export default () => {
           {/* List of tasks*/}
           <TaskList
             tasksvar={tasks}
-            handleDeleteItem={DataBase.deleteItemFromDatabase}
+            setDellOne={setDellOne}
             handleRefresh={handleRefresh}
           />
         </ScrollView>
       </SafeAreaView>
 
       <DeleteAll handleRefresh={handleRefresh} dellAll={dellAll} setDellAll={setDellAll}/>
+      <DeleteOneItem handleRefresh={handleRefresh} dellOne={dellOne} setDellOne={setDellOne} />
 
       <TouchableOpacity style={HomeStyle.cleantasks} onPress={() => {setDellAll(true)} }>
           <Text style={HomeStyle.cleantasks_text}>apagar todas as tarefas</Text>
