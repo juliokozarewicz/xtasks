@@ -33,6 +33,7 @@ import HomeStyle from './1_stylesheet/HomeStyle';
 const TaskList = ({ tasksvar, handleDeleteItem, handleRefresh }) => (
   <>
     {
+
       tasksvar.length === 0 ? (
         <Text style={HomeStyle.zeroitens}>Sem tarefas pendentes! Adicione novos itens...</Text>
       )
@@ -67,8 +68,11 @@ const TaskList = ({ tasksvar, handleDeleteItem, handleRefresh }) => (
           </TouchableOpacity>
         </View>
       ))
+
     }
+
   </>
+
 );
 // ----------------------------------------------------------------------------------------------
 
@@ -88,17 +92,29 @@ const LoadScreen = () => {
 
   return (
     <>
-      {isVisible ? (
-        <View style={HomeStyle.loadscreen}>
-          <Image
-            source={require('./3_imgs/logo.png')}
-            style={HomeStyle.loadscreenlogo}
-          />
-          <Text style={HomeStyle.loadscreenText}>Aguarde...</Text>
-        </View>
-      ) : null}
+
+      {
+      
+        isVisible ? (
+          <View style={HomeStyle.loadscreen}>
+            <Image
+              source={require('./3_imgs/logo.png')}
+              style={HomeStyle.loadscreenlogo}
+            />
+            <Text style={HomeStyle.loadscreenText}>Aguarde...</Text>
+          </View>
+        )
+      
+      : 
+      
+        null
+      
+      }
+
     </>
+
   );
+
 };
 // ----------------------------------------------------------------------------------------------
 
@@ -119,7 +135,10 @@ const DeleteAll = ({ handleRefresh, dellAll, setDellAll }) => {
 
   return (
     <>
-      {dellAll ? (
+
+      {
+      
+      dellAll ? (
         <View style={ dellAll ? HomeStyle.framedeleteall : null}>
           <TouchableWithoutFeedback onPress={() => notexcludeAllconfirm()}>
             <View style={HomeStyle.backgrounddeleteall}>
@@ -140,8 +159,11 @@ const DeleteAll = ({ handleRefresh, dellAll, setDellAll }) => {
         null
         
         }
+
     </>
+
   );
+  
 };
 // ----------------------------------------------------------------------------------------------
 
