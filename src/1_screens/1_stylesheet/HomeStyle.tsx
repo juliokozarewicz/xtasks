@@ -244,6 +244,11 @@ export default StyleSheet.create(
       height: 25,
     },
 
+    deleteiconall: {
+      width: 35,
+      height: 35,
+    },
+
     loadscreen: {
       zIndex: 100,
       position: 'absolute',
@@ -326,18 +331,18 @@ export default StyleSheet.create(
     boxmessagedeleteaall: {
       zIndex: 92,
       position: 'absolute',
-      bottom: 20,
+      bottom: 10,
 
-      width: '90%',
-      height: 200,
+      width: '95%',
+      height: 330,
 
       backgroundColor: colors.gray1,
       color: colors.black,
 
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'flex-end',
 
-      borderWidth: 4,
+      borderWidth: 3,
 
       borderColor: colors.purple,
 
@@ -348,12 +353,14 @@ export default StyleSheet.create(
       zIndex: 93,
       position: 'relative',
 
+      marginTop: 15,
+
       width: 200,
 
       fontFamily: 'textbold',
       fontSize: 12,
 
-      color: colors.purple,
+      color: colors.gray5,
 
       textAlign: 'center',
     },
@@ -362,9 +369,9 @@ export default StyleSheet.create(
       zIndex: 93,
       position: 'relative',
 
-      marginTop: 45,
+      marginTop: 50,
 
-      width: 200,
+      width: '90%',
       height: 50,
 
       backgroundColor: colors.purple,
@@ -384,6 +391,37 @@ export default StyleSheet.create(
       fontSize: 12,
 
       color: 'white',
+
+      textAlign: 'center',
+    },
+
+    cancelalllbtnconfirm: {
+      zIndex: 93,
+      position: 'relative',
+
+      marginTop: 10,
+      marginBottom: 25,
+
+      width: '90%',
+      height: 50,
+
+      backgroundColor: colors.green,
+      color: 'white',
+
+      alignItems: 'center',
+      justifyContent: 'center',
+
+      borderRadius: 10,
+    },
+
+    cancelalllbtnconfirmtxt: {
+      zIndex: 93,
+      position: 'relative',
+
+      fontFamily: 'title',
+      fontSize: 12,
+
+      color: colors.black,
 
       textAlign: 'center',
     },

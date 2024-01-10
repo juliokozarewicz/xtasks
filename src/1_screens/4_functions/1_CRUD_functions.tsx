@@ -50,7 +50,7 @@ export const ReadDataBase = () => {
   return new Promise((resolve, reject) => {
     db.transaction((tx) => {
       tx.executeSql(
-        `SELECT * FROM ${table_name}`,
+        `SELECT * FROM ${table_name} ORDER BY ID DESC`,
         [],
         (tx, results) => {
           const data = [];

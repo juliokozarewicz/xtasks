@@ -146,9 +146,16 @@ const DeleteAll = ({ handleRefresh, dellAll, setDellAll }) => {
             </View>
           </TouchableWithoutFeedback>
           <View style={HomeStyle.boxmessagedeleteaall}>
+            <Image
+              source={require('./3_imgs/deleteicon.png')}
+              style={HomeStyle.deleteiconall}
+            />
             <Text style={HomeStyle.boxmessagedeleteaalltitle}>Deseja realmente apagar todas as tarefas?</Text>
             <TouchableOpacity style={HomeStyle.deleteallbtnconfirm} onPress={() => excludeAllconfirm()}>
               <Text style={HomeStyle.deleteallbtnconfirmtext}>apagar tudo</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={HomeStyle.cancelalllbtnconfirm} onPress={() => notexcludeAllconfirm()}>
+              <Text style={HomeStyle.cancelalllbtnconfirmtxt}>cancelar</Text>
             </TouchableOpacity>
           </View>
         </View>
