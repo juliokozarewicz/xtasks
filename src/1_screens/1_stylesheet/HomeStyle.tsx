@@ -370,8 +370,8 @@ export default StyleSheet.create(
       position: 'relative',
 
       marginTop: 15,
-
-      width: '80%',
+      
+      maxWidth: '80%',
 
       fontFamily: 'textbold',
       fontSize: 12,

@@ -212,7 +212,12 @@ const DeleteOneItem = ({dellOne, setDellOne, handleRefresh, item}) => {
               style={HomeStyle.deleteiconall}
             />
             <Text style={HomeStyle.boxmessagedeleteaalltitle}>A tarefa foi concluída?</Text>
-            <Text style={HomeStyle.boxmessagedeleteaOnetitle}>"{item.tarefa}"</Text>
+            <Text
+              numberOfLines={2}
+              ellipsizeMode="tail"
+              style={HomeStyle.boxmessagedeleteaOnetitle}>
+                "{item.tarefa}"
+            </Text>
             <TouchableOpacity style={HomeStyle.deleteOnebtnconfirm} onPress={() => excludeAllconfirm()}>
               <Text style={HomeStyle.deleteallbtnconfirmtext}>apagar</Text>
             </TouchableOpacity>
