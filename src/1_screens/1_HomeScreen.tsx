@@ -263,12 +263,10 @@ const DeleteOneItem = ({dellOne, setDellOne, handleRefresh, item}) => {
 
 // update tasks
 // ----------------------------------------------------------------------------------------------
-const UpdateTask = ({update, setUpdate, handleRefresh, item, setFocused}) => {
-
-  const [updatetxt, setUpdatetxt] = useState();
+const UpdateTask = ({update, setUpdate, handleRefresh, item, setFocused, taskInput, setTaskInput}) => {
 
   useEffect(() => {
-    setUpdatetxt(item.tarefa);
+    setTaskInput(item.tarefa);
   }, [item.tarefa]);
 
   const notUpdate = () => {
@@ -306,10 +304,10 @@ const UpdateTask = ({update, setUpdate, handleRefresh, item, setFocused}) => {
               HomeStyle.itaskupdate,
               //isFocused ? HomeStyle.itaskFocused : null,
             ]}
-              value={updatetxt}
+              value={taskInput}
               placeholder='Insira uma tarefa...'
               placeholderTextColor={HomeStyle.itask_placeholder.color}
-              onChangeText={(text) => setUpdatetxt(text)}
+              onChangeText={(text) => setTaskInput(text)}
               onFocus={() => setFocused(true)}
               onBlur={() => setFocused(false)}
             />
@@ -325,7 +323,7 @@ const UpdateTask = ({update, setUpdate, handleRefresh, item, setFocused}) => {
                 value={item.description}
                 placeholder='Insira uma tarefa...'
                 placeholderTextColor={HomeStyle.itask_placeholder.color}
-                onChangeText={(text) => setUpdatetxt(text)}
+                onChangeText={(text) => setTaskInput(text)}
                 onFocus={() => setFocused(true)}
                 onBlur={() => setFocused(false)}
               />
