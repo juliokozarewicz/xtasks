@@ -263,18 +263,18 @@ const DeleteOneItem = ({dellOne, setDellOne, handleRefresh, item}) => {
 
 // update tasks
 // ----------------------------------------------------------------------------------------------
-const UpdateTask = ({update, setUpdate, handleRefresh, item, setFocused, taskInput, setTaskInput}) => {
+const UpdateTask = ({update, setUpdate, handleRefresh, item, setFocused}) => {
 
-  const [updatetxt, setUpdatetxt] = useState(item.tarefa);
+  const [updatetxt, setUpdatetxt] = useState();
 
   useEffect(() => {
     setUpdatetxt(item.tarefa);
   }, [item.tarefa]);
 
   const notUpdate = () => {
-    handleRefresh();
     setUpdate(false);
     setFocused(false);
+    handleRefresh();
   };
 
   return (
@@ -325,7 +325,7 @@ const UpdateTask = ({update, setUpdate, handleRefresh, item, setFocused, taskInp
                 value={item.description}
                 placeholder='Insira uma tarefa...'
                 placeholderTextColor={HomeStyle.itask_placeholder.color}
-                onChangeText={(text) => setTaskInput(text)}
+                onChangeText={(text) => setUpdatetxt(text)}
                 onFocus={() => setFocused(true)}
                 onBlur={() => setFocused(false)}
               />
