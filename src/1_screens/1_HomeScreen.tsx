@@ -30,7 +30,7 @@ import HomeStyle from './1_stylesheet/HomeStyle';
 
 // Tasklist component
 // ----------------------------------------------------------------------------------------------
-const TaskList = ({ tasksvar, setDellOne, setItemDellOne }) => (
+const TaskList = ({ tasksvar, setDellOne, setItemState, setUpdate }) => (
   <>
     {
 
@@ -42,7 +42,18 @@ const TaskList = ({ tasksvar, setDellOne, setItemDellOne }) => (
 
       tasksvar.map((item, index) => (
         <View key={index} style={HomeStyle.taskinserted}>
-          <View style={HomeStyle.taskdescript}>
+          <TouchableOpacity
+            style={HomeStyle.taskdescript}
+            onPress={() => {
+              setUpdate(true);
+              setItemState(
+                  {
+                    "tarefa": item.tarefa,
+                    "id": item.id,
+                    "description": item.description,
+                  });
+            }}
+          >
             <Text
               style={HomeStyle.taskdescript_txt}
               numberOfLines={1}
@@ -50,14 +61,14 @@ const TaskList = ({ tasksvar, setDellOne, setItemDellOne }) => (
             >
               {item.tarefa.charAt(0).toUpperCase() + item.tarefa.slice(1).toLowerCase()}
             </Text>
-          </View>
+          </TouchableOpacity>
 
           <TouchableOpacity
             style={HomeStyle.btndeletetask}
             onPress={
               () => {
                 setDellOne(true);
-                setItemDellOne(
+                setItemState(
                   {
                     "tarefa": item.tarefa,
                     "id": item.id,
@@ -232,12 +243,113 @@ const DeleteOneItem = ({dellOne, setDellOne, handleRefresh, item}) => {
 
         null
         
-        }
+      }
 
     </>
 
   );
-  
+
+};
+// ----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+// update tasks
+// ----------------------------------------------------------------------------------------------
+const UpdateTask = ({update, setUpdate, handleRefresh, item, isFocused, setFocused, taskInput, setTaskInput}) => {
+
+  const [updatetxt, setUpdatetxt] = useState(item.tarefa);
+
+  useEffect(() => {
+    setUpdatetxt(item.tarefa);
+  }, [item.tarefa]);
+
+  const notUpdate = () => {
+    handleRefresh();
+    setUpdate(false);
+    setFocused(false);
+  };
+
+  return (
+
+    <>
+
+      {
+
+      update ? (
+        <View style={ HomeStyle.framedeleteall }>
+          <TouchableWithoutFeedback onPress={ () => notUpdate()}>
+            <View style={HomeStyle.backgrounddeleteall}>
+              <Text style={HomeStyle.backgrounddeletealltxt}>Fechar  [ x ]</Text>
+            </View>
+          </TouchableWithoutFeedback>
+          <View style={HomeStyle.boxmessageupdate}>
+            <Image
+              source={require('./3_imgs/editicon.png')}
+              style={HomeStyle.updateicon}
+            />
+            <Text style={HomeStyle.boxmessagedeleteaalltitle}>Deseja fazer alterações?</Text>
+
+
+
+
+
+            <TextInput
+            style={[
+              HomeStyle.itaskupdate,
+              //isFocused ? HomeStyle.itaskFocused : null,
+            ]}
+              value={updatetxt}
+              placeholder='Insira uma tarefa...'
+              placeholderTextColor={HomeStyle.itask_placeholder.color}
+              onChangeText={(text) => setUpdatetxt(text)}
+              onFocus={() => setFocused(true)}
+              onBlur={() => setFocused(false)}
+            />
+
+
+
+
+            <TextInput
+              style={[
+                HomeStyle.itaskupdate2,
+                //isFocused ? HomeStyle.itaskFocused : null,
+              ]}
+                value={item.description}
+                placeholder='Insira uma tarefa...'
+                placeholderTextColor={HomeStyle.itask_placeholder.color}
+                onChangeText={(text) => setTaskInput(text)}
+                onFocus={() => setFocused(true)}
+                onBlur={() => setFocused(false)}
+              />
+
+            
+            <TouchableOpacity style={HomeStyle.deleteOnebtnconfirm}>
+              <Text style={HomeStyle.deleteallbtnconfirmtext}>alterar</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={HomeStyle.cancelalllbtnconfirm} onPress={ () => notUpdate()}>
+              <Text style={HomeStyle.cancelalllbtnconfirmtxt}>cancelar</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      )
+
+      :
+
+        null
+
+      }
+
+    </>
+
+  );
 };
 // ----------------------------------------------------------------------------------------------
 
@@ -260,9 +372,14 @@ export default () => {
     // dell all itens
     const [dellAll, setDellAll] = useState(false);
 
+    // item for changes or delete
+    const [itemState, setItemState] = useState();
+
     // dell one
     const [dellOne, setDellOne] = useState(false);
-    const [itemDellOne, setItemDellOne] = useState();
+
+    // update task
+    const [update, setUpdate] = useState(false);
 
   // --------------------------------------------------
 
@@ -336,13 +453,15 @@ export default () => {
             tasksvar={tasks}
             setDellOne={setDellOne}
             handleRefresh={handleRefresh}
-            setItemDellOne={setItemDellOne}
+            setItemState={setItemState}
+            setUpdate={setUpdate}
           />
         </ScrollView>
       </SafeAreaView>
 
       <DeleteAll handleRefresh={handleRefresh} dellAll={dellAll} setDellAll={setDellAll}/>
-      <DeleteOneItem handleRefresh={handleRefresh} dellOne={dellOne} setDellOne={setDellOne} item={itemDellOne}/>
+      <DeleteOneItem handleRefresh={handleRefresh} dellOne={dellOne} setDellOne={setDellOne} item={itemState}/>
+      <UpdateTask update={update} setUpdate={setUpdate} handleRefresh={handleRefresh}  item={itemState} isFocused={isFocused} setFocused={setFocused} taskInput={taskInput} setTaskInput={setTaskInput} />
 
       <TouchableOpacity style={HomeStyle.cleantasks} onPress={() => {setDellAll(true)} }>
           <Text style={HomeStyle.cleantasks_text}>apagar todas as tarefas</Text>

@@ -96,6 +96,48 @@ export default StyleSheet.create(
       borderRadius: 10,
 
     },
+
+    itaskupdate: {
+      marginTop: 40,
+
+      width: '90%',
+      height: 50,
+      
+      backgroundColor: colors.gray1,
+      color: colors.gray5,
+
+      fontFamily: 'textbold',
+      fontSize: 12,
+
+      paddingLeft: 15,
+
+      borderWidth: 1,
+      borderColor: colors.gray3,
+      
+      borderRadius: 10,
+
+    },
+
+    itaskupdate2: {
+      marginTop: 10,
+
+      width: '90%',
+      height: 50,
+      
+      backgroundColor: colors.gray1,
+      color: colors.gray5,
+
+      fontFamily: 'textbold',
+      fontSize: 12,
+
+      paddingLeft: 15,
+
+      borderWidth: 1,
+      borderColor: colors.gray3,
+      
+      borderRadius: 10,
+
+    },
     
     itaskFocused: {borderColor: colors.green},
 
@@ -249,6 +291,11 @@ export default StyleSheet.create(
       height: 35,
     },
 
+    updateicon: {
+      width: 40,
+      height: 40,
+    },
+
     loadscreen: {
       zIndex: 100,
       position: 'absolute',
@@ -317,8 +364,8 @@ export default StyleSheet.create(
     backgrounddeletealltxt: {
       zIndex: 93,
       position: 'absolute',
-      right: 30,
-      top: 30,
+      right: 35,
+      top: 40,
 
       fontFamily: 'textbold',
       fontSize: 12,
@@ -335,6 +382,27 @@ export default StyleSheet.create(
 
       width: '95%',
       height: 330,
+
+      backgroundColor: colors.gray1,
+      color: colors.black,
+
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+
+      borderWidth: 3,
+
+      borderColor: colors.purple,
+
+      borderRadius: 30,
+    },
+
+    boxmessageupdate: {
+      zIndex: 92,
+      position: 'absolute',
+      bottom: 10,
+
+      width: '95%',
+      height: 430,
 
       backgroundColor: colors.gray1,
       color: colors.black,
