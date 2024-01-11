@@ -263,7 +263,7 @@ const DeleteOneItem = ({dellOne, setDellOne, handleRefresh, item}) => {
 
 // update tasks
 // ----------------------------------------------------------------------------------------------
-const UpdateTask = ({update, setUpdate, handleRefresh, item, isFocused, setFocused, taskInput, setTaskInput}) => {
+const UpdateTask = ({update, setUpdate, handleRefresh, item, setFocused, taskInput, setTaskInput}) => {
 
   const [updatetxt, setUpdatetxt] = useState(item.tarefa);
 
@@ -373,7 +373,7 @@ export default () => {
     const [dellAll, setDellAll] = useState(false);
 
     // item for changes or delete
-    const [itemState, setItemState] = useState();
+    const [itemState, setItemState] = useState({"tarefa": "", "description": "", "id": "",});
 
     // dell one
     const [dellOne, setDellOne] = useState(false);
