@@ -265,6 +265,8 @@ const UpdateTask = ({
 
   const [taskInputUpdate, settaskInputUpdate] = useState('');
   const [taskDesc, settaskDesc] = useState('');
+  const [isFocusedOne, setFocusedOne] = useState(false);
+  const [isFocusedTwo, setFocusedTwo] = useState(false);
 
   useEffect(() => {
     settaskInputUpdate(item.tarefa);
@@ -307,27 +309,27 @@ const UpdateTask = ({
             <TextInput
               style={[
                 HomeStyle.itaskupdate,
-                //isFocused ? HomeStyle.itaskFocused : null,
+                isFocusedOne ? HomeStyle.itaskFocused : null,
               ]}
               value={taskInputUpdate}
               placeholder='Insira uma tarefa...'
               placeholderTextColor={HomeStyle.itask_placeholder.color}
               onChangeText={(text) => settaskInputUpdate(text)}
-              onFocus={() => setFocused(true)}
-              onBlur={() => setFocused(false)}
+              onFocus={() => setFocusedOne(true)}
+              onBlur={() => setFocusedOne(false)}
             />
 
             <TextInput
                 style={[
                   HomeStyle.itaskupdate2,
-                  //isFocused ? HomeStyle.itaskFocused : null,
+                  isFocusedTwo ? HomeStyle.itaskFocused : null,
                 ]}
                 value={taskDesc}
                 placeholder='Insira mais detalhes sobre a sua tarefa ou então faça um checklist de itens para resolver...'
                 placeholderTextColor={HomeStyle.itask_placeholder.color}
                 onChangeText={(text) => settaskDesc(text)}
-                onFocus={() => setFocused(true)}
-                onBlur={() => setFocused(false)}
+                onFocus={() => setFocusedTwo(true)}
+                onBlur={() => setFocusedTwo(false)}
 
                 multiline = {true}
                 numberOfLines = {4}
