@@ -46,13 +46,13 @@ const TaskList = ({ tasksvar, setDellOne, setItemState, setUpdate }) => (
           <TouchableOpacity
             style={HomeStyle.taskdescript}
             onPress={() => {
-              setUpdate(true);
               setItemState(
-                  {
-                    "tarefa": item.tarefa,
-                    "id": item.id,
-                    "description": item.description,
-                  });
+                {
+                  "tarefa": item.tarefa,
+                  "id": item.id,
+                  "description": item.description,
+                });
+              setUpdate(true);
             }}
           >
             <Text
@@ -68,12 +68,12 @@ const TaskList = ({ tasksvar, setDellOne, setItemState, setUpdate }) => (
             style={HomeStyle.btndeletetask}
             onPress={
               () => {
-                setDellOne(true);
                 setItemState(
                   {
                     "tarefa": item.tarefa,
                     "id": item.id,
                   });
+                setDellOne(true);
               }
             }
           >
@@ -272,7 +272,6 @@ const UpdateTask = ({
   setFocused,
   taskInput,
   setTaskInput,
-  taskDesc, 
   settaskDesc
 }) => {
 
@@ -287,7 +286,7 @@ const UpdateTask = ({
   };
 
   const updateFinish = () => {
-    DataBase.UpdateItemDataBase(item.id, item.task, item.description),
+    //DataBase.UpdateItemDataBase(item.id, item.task, item.description),
     setUpdate(false);
     setFocused(false);
     handleRefresh();

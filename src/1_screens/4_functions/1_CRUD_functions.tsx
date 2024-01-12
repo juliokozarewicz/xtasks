@@ -104,7 +104,7 @@ export const deleteItemFromDatabase = (itemId) => {
 
 // update item in db
 // -------------------------------------------------------
-export const UpdateItemDataBase = (id, task: string, description: string) => {
+export const UpdateItemDataBase = (id, task, description) => {
 
   db.transaction((tx) => {
     tx.executeSql(
