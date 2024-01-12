@@ -286,6 +286,13 @@ const UpdateTask = ({
     handleRefresh();
   };
 
+  const updateFinish = () => {
+    DataBase.UpdateItemDataBase(item.id, item.task, item.description),
+    setUpdate(false);
+    setFocused(false);
+    handleRefresh();
+  };
+
   return (
 
     <>
@@ -343,7 +350,7 @@ const UpdateTask = ({
               />
 
             
-            <TouchableOpacity style={HomeStyle.deleteOnebtnconfirm}>
+            <TouchableOpacity style={HomeStyle.deleteOnebtnconfirm} onPress={ ()=> updateFinish()} >
               <Text style={HomeStyle.deleteallbtnconfirmtext}>alterar</Text>
             </TouchableOpacity>
             <TouchableOpacity style={HomeStyle.cancelalllbtnconfirm} onPress={ () => notUpdate()}>

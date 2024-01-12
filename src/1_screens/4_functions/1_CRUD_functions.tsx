@@ -101,3 +101,16 @@ export const deleteItemFromDatabase = (itemId) => {
   });
 };
 // -------------------------------------------------------
+
+// update item in db
+// -------------------------------------------------------
+export const UpdateItemDataBase = (id, task: string, description: string) => {
+
+  db.transaction((tx) => {
+    tx.executeSql(
+      `UPDATE ${table_name} SET ${column_name_1} = ?, ${column_name_2} = ? WHERE id = ?`,
+    [task, description, id],
+    );
+  });
+};
+// -------------------------------------------------------
