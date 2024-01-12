@@ -277,6 +277,8 @@ const UpdateTask = ({
     setUpdate(false);
     setFocused(false);
     handleRefresh();
+    setFocusedOne(false);
+    setFocusedTwo(false);
   };
 
   const updateFinish = () => {
@@ -284,6 +286,8 @@ const UpdateTask = ({
     setUpdate(false);
     setFocused(false);
     handleRefresh();
+    setFocusedOne(false);
+    setFocusedTwo(false);
   };
 
   return (
