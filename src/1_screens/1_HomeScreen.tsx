@@ -313,10 +313,6 @@ const UpdateTask = ({
             />
             <Text style={HomeStyle.boxmessagedeleteaalltitle}>Deseja fazer alterações?</Text>
 
-
-
-
-
             <TextInput
               style={[
                 HomeStyle.itaskupdate,
@@ -329,9 +325,6 @@ const UpdateTask = ({
               onFocus={() => setFocused(true)}
               onBlur={() => setFocused(false)}
             />
-
-
-
 
             <TextInput
                 style={[
@@ -349,7 +342,6 @@ const UpdateTask = ({
                 numberOfLines = {4}
               />
 
-            
             <TouchableOpacity style={HomeStyle.deleteOnebtnconfirm} onPress={ ()=> updateFinish()} >
               <Text style={HomeStyle.deleteallbtnconfirmtext}>alterar</Text>
             </TouchableOpacity>
