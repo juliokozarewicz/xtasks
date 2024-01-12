@@ -122,7 +122,7 @@ export default StyleSheet.create(
       marginTop: 10,
 
       width: '90%',
-      height: 50,
+      height: 270,
       
       backgroundColor: colors.gray1,
       color: colors.gray5,
@@ -130,12 +130,17 @@ export default StyleSheet.create(
       fontFamily: 'textbold',
       fontSize: 12,
 
-      paddingLeft: 15,
-
       borderWidth: 1,
       borderColor: colors.gray3,
       
       borderRadius: 10,
+
+      paddingTop: 20,
+      paddingBottom: 20,
+      paddingLeft: 15,
+      paddingRight: 5,
+
+      textAlignVertical: 'top',
 
     },
     
@@ -402,7 +407,7 @@ export default StyleSheet.create(
       bottom: 10,
 
       width: '95%',
-      height: 430,
+      height: 650,
 
       backgroundColor: colors.gray1,
       color: colors.black,

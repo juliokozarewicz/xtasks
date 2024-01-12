@@ -300,10 +300,10 @@ const UpdateTask = ({update, setUpdate, handleRefresh, item, setFocused, taskInp
 
 
             <TextInput
-            style={[
-              HomeStyle.itaskupdate,
-              //isFocused ? HomeStyle.itaskFocused : null,
-            ]}
+              style={[
+                HomeStyle.itaskupdate,
+                //isFocused ? HomeStyle.itaskFocused : null,
+              ]}
               value={taskInput}
               placeholder='Insira uma tarefa...'
               placeholderTextColor={HomeStyle.itask_placeholder.color}
@@ -316,16 +316,19 @@ const UpdateTask = ({update, setUpdate, handleRefresh, item, setFocused, taskInp
 
 
             <TextInput
-              style={[
-                HomeStyle.itaskupdate2,
-                //isFocused ? HomeStyle.itaskFocused : null,
-              ]}
+                style={[
+                  HomeStyle.itaskupdate2,
+                  //isFocused ? HomeStyle.itaskFocused : null,
+                ]}
                 value={item.description}
-                placeholder='Insira uma tarefa...'
+                placeholder='Insira mais detalhes sobre a sua tarefa ou então faça um checklist de itens para resolver...'
                 placeholderTextColor={HomeStyle.itask_placeholder.color}
                 onChangeText={(text) => setTaskInput(text)}
                 onFocus={() => setFocused(true)}
                 onBlur={() => setFocused(false)}
+
+                multiline = {true}
+                numberOfLines = {4}
               />
 
             
@@ -459,7 +462,16 @@ export default () => {
 
       <DeleteAll handleRefresh={handleRefresh} dellAll={dellAll} setDellAll={setDellAll}/>
       <DeleteOneItem handleRefresh={handleRefresh} dellOne={dellOne} setDellOne={setDellOne} item={itemState}/>
-      <UpdateTask update={update} setUpdate={setUpdate} handleRefresh={handleRefresh}  item={itemState} isFocused={isFocused} setFocused={setFocused} taskInput={taskInput} setTaskInput={setTaskInput} />
+      <UpdateTask
+        update={update}
+        setUpdate={setUpdate}
+        handleRefresh={handleRefresh} 
+        item={itemState}
+        isFocused={isFocused}
+        setFocused={setFocused}
+        taskInput={taskInput}
+        setTaskInput={setTaskInput}
+      />
 
       <TouchableOpacity style={HomeStyle.cleantasks} onPress={() => {setDellAll(true)} }>
           <Text style={HomeStyle.cleantasks_text}>apagar todas as tarefas</Text>
