@@ -1,6 +1,6 @@
 # Xtasks Gerenciador de Tarefas
 
-![Logo do Xtasks](src\0_design\3_github\logo.png)
+<img src="src\0_design\3_github\logo.png" width="600">
 
 <img src="src\0_design\3_github\1.png" width="600">
 <img src="src\0_design\3_github\2.png" width="600">
