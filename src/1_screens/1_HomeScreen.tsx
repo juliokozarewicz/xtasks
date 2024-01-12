@@ -50,7 +50,7 @@ const TaskList = ({ tasksvar, setDellOne, setItemState, setUpdate }) => (
                 {
                   "tarefa": item.tarefa,
                   "id": item.id,
-                  "description": item.description,
+                  "descricao": item.descricao,
                 });
               setUpdate(true);
             }}
@@ -276,7 +276,6 @@ const UpdateTask = ({
   const [taskDesc, settaskDesc] = useState('');
 
   useEffect(() => {
-    settaskInputUpdate('');
     settaskInputUpdate(item);
   });  
 
@@ -287,7 +286,7 @@ const UpdateTask = ({
   };
 
   const updateFinish = () => {
-    //DataBase.UpdateItemDataBase(item.id, item.task, item.description),
+    //DataBase.UpdateItemDataBase(item.task, item.descricao, item.id),
     setUpdate(false);
     setFocused(false);
     handleRefresh();
@@ -322,7 +321,7 @@ const UpdateTask = ({
                 HomeStyle.itaskupdate,
                 //isFocused ? HomeStyle.itaskFocused : null,
               ]}
-              value={taskInputUpdate.tarefa}
+              
               placeholder='Insira uma tarefa...'
               placeholderTextColor={HomeStyle.itask_placeholder.color}
               onChangeText={(text) => settaskInputUpdate(text)}
@@ -338,7 +337,7 @@ const UpdateTask = ({
                   HomeStyle.itaskupdate2,
                   //isFocused ? HomeStyle.itaskFocused : null,
                 ]}
-                value={taskInputUpdate.description}
+                value={taskInputUpdate.descricao}
                 placeholder='Insira mais detalhes sobre a sua tarefa ou então faça um checklist de itens para resolver...'
                 placeholderTextColor={HomeStyle.itask_placeholder.color}
                 onChangeText={(text) => settaskDesc(text)}
@@ -392,7 +391,7 @@ export default () => {
     const [dellAll, setDellAll] = useState(false);
 
     // item for changes or delete
-    const [itemState, setItemState] = useState({"tarefa": "", "description": "", "id": "",});
+    const [itemState, setItemState] = useState({"tarefa": "", "descricao": "", "id": "",});
 
     // dell one
     const [dellOne, setDellOne] = useState(false);

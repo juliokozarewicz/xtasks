@@ -72,7 +72,7 @@ export const ReadDataBase = () => {
 
 // create item in db
 // -------------------------------------------------------
-export const CreateItemDataBase = (task: string, description: string) => {
+export const CreateItemDataBase = (task: string, descricao: string) => {
 
     if (task.trim() === '') {
     
@@ -81,7 +81,7 @@ export const CreateItemDataBase = (task: string, description: string) => {
       db.transaction((tx) => {
           tx.executeSql(
             `INSERT INTO ${table_name} (${column_name_1}, ${column_name_2}) VALUES (?, ?)`,
-          [task, description],
+          [task, descricao],
           );
       });
 
@@ -104,12 +104,11 @@ export const deleteItemFromDatabase = (itemId) => {
 
 // update item in db
 // -------------------------------------------------------
-export const UpdateItemDataBase = (id, task, description) => {
-
+export const UpdateItemDataBase = (task, descricao, itemId) => {
   db.transaction((tx) => {
     tx.executeSql(
       `UPDATE ${table_name} SET ${column_name_1} = ?, ${column_name_2} = ? WHERE id = ?`,
-    [task, description, id],
+      [task, descricao, itemId],
     );
   });
 };
