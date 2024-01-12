@@ -297,6 +297,7 @@ export default StyleSheet.create(
     },
 
     updateicon: {
+      marginTop: 30,
       width: 40,
       height: 40,
     },
@@ -329,6 +330,17 @@ export default StyleSheet.create(
     },
 
     framedeleteall: {
+      zIndex: 90,
+      position: 'absolute',
+
+      width: '100%',
+      height: '100%',
+
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
+    frameupdate: {
       zIndex: 90,
       position: 'absolute',
 
@@ -407,7 +419,7 @@ export default StyleSheet.create(
       bottom: 10,
 
       width: '95%',
-      height: 650,
+      maxHeight: '100%',
 
       backgroundColor: colors.gray1,
       color: colors.black,

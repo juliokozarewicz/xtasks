@@ -12,6 +12,7 @@ import {
   TouchableWithoutFeedback,
   ScrollView,
   Image,
+  KeyboardAvoidingView,
   } from 'react-native';
 
 // import databse CRUD
@@ -263,7 +264,17 @@ const DeleteOneItem = ({dellOne, setDellOne, handleRefresh, item}) => {
 
 // update tasks
 // ----------------------------------------------------------------------------------------------
-const UpdateTask = ({update, setUpdate, handleRefresh, item, setFocused, taskInput, setTaskInput}) => {
+const UpdateTask = ({
+  update,
+  setUpdate,
+  handleRefresh,
+  item,
+  setFocused,
+  taskInput,
+  setTaskInput,
+  taskDesc, 
+  settaskDesc
+}) => {
 
   useEffect(() => {
     setTaskInput(item.tarefa);
@@ -282,7 +293,7 @@ const UpdateTask = ({update, setUpdate, handleRefresh, item, setFocused, taskInp
       {
 
       update ? (
-        <View style={ HomeStyle.framedeleteall }>
+        <KeyboardAvoidingView style={ HomeStyle.framedeleteall } behavior="height" enabled>
           <TouchableWithoutFeedback onPress={ () => notUpdate()}>
             <View style={HomeStyle.backgrounddeleteall}>
               <Text style={HomeStyle.backgrounddeletealltxt}>Fechar  [ x ]</Text>
@@ -323,7 +334,7 @@ const UpdateTask = ({update, setUpdate, handleRefresh, item, setFocused, taskInp
                 value={item.description}
                 placeholder='Insira mais detalhes sobre a sua tarefa ou então faça um checklist de itens para resolver...'
                 placeholderTextColor={HomeStyle.itask_placeholder.color}
-                onChangeText={(text) => setTaskInput(text)}
+                onChangeText={(text) => settaskDesc(text)}
                 onFocus={() => setFocused(true)}
                 onBlur={() => setFocused(false)}
 
@@ -339,7 +350,7 @@ const UpdateTask = ({update, setUpdate, handleRefresh, item, setFocused, taskInp
               <Text style={HomeStyle.cancelalllbtnconfirmtxt}>cancelar</Text>
             </TouchableOpacity>
           </View>
-        </View>
+        </KeyboardAvoidingView>
       )
 
       :
@@ -368,6 +379,7 @@ export default () => {
     // input task
     const [isFocused, setFocused] = useState(false);
     const [taskInput, setTaskInput] = useState('');
+    const [taskDesc, settaskDesc] = useState('');
     const [refreshInput, setRefreshInput] = useState(0);
 
     // dell all itens
@@ -471,6 +483,8 @@ export default () => {
         setFocused={setFocused}
         taskInput={taskInput}
         setTaskInput={setTaskInput}
+        taskDesc={taskDesc}
+        settaskDesc={settaskDesc}
       />
 
       <TouchableOpacity style={HomeStyle.cleantasks} onPress={() => {setDellAll(true)} }>
