@@ -276,8 +276,9 @@ const UpdateTask = ({
   const [taskDesc, settaskDesc] = useState('');
 
   useEffect(() => {
-    settaskInputUpdate(item);
-  });  
+    settaskInputUpdate(item.tarefa);
+    settaskDesc(item.descricao);
+  }, [item]);
 
   const notUpdate = () => {
     setUpdate(false);
@@ -286,7 +287,7 @@ const UpdateTask = ({
   };
 
   const updateFinish = () => {
-    //DataBase.UpdateItemDataBase(item.task, item.descricao, item.id),
+    DataBase.UpdateItemDataBase(taskInputUpdate, taskDesc, item.id),
     setUpdate(false);
     setFocused(false);
     handleRefresh();
@@ -321,7 +322,7 @@ const UpdateTask = ({
                 HomeStyle.itaskupdate,
                 //isFocused ? HomeStyle.itaskFocused : null,
               ]}
-              
+              value={taskInputUpdate}
               placeholder='Insira uma tarefa...'
               placeholderTextColor={HomeStyle.itask_placeholder.color}
               onChangeText={(text) => settaskInputUpdate(text)}
@@ -337,7 +338,7 @@ const UpdateTask = ({
                   HomeStyle.itaskupdate2,
                   //isFocused ? HomeStyle.itaskFocused : null,
                 ]}
-                value={taskInputUpdate.descricao}
+                value={taskDesc}
                 placeholder='Insira mais detalhes sobre a sua tarefa ou então faça um checklist de itens para resolver...'
                 placeholderTextColor={HomeStyle.itask_placeholder.color}
                 onChangeText={(text) => settaskDesc(text)}
