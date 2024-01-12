@@ -129,6 +129,7 @@ export default StyleSheet.create(
 
       fontFamily: 'textbold',
       fontSize: 12,
+      lineHeight: 18,
 
       borderWidth: 1,
       borderColor: colors.gray3,
