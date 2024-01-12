@@ -270,14 +270,15 @@ const UpdateTask = ({
   handleRefresh,
   item,
   setFocused,
-  taskInput,
-  setTaskInput,
-  settaskDesc
 }) => {
 
+  const [taskInputUpdate, settaskInputUpdate] = useState('');
+  const [taskDesc, settaskDesc] = useState('');
+
   useEffect(() => {
-    setTaskInput(item.tarefa);
-  }, [item.tarefa]);
+    settaskInputUpdate('');
+    settaskInputUpdate(item);
+  });  
 
   const notUpdate = () => {
     setUpdate(false);
@@ -321,10 +322,10 @@ const UpdateTask = ({
                 HomeStyle.itaskupdate,
                 //isFocused ? HomeStyle.itaskFocused : null,
               ]}
-              value={taskInput}
+              value={taskInputUpdate.tarefa}
               placeholder='Insira uma tarefa...'
               placeholderTextColor={HomeStyle.itask_placeholder.color}
-              onChangeText={(text) => setTaskInput(text)}
+              onChangeText={(text) => settaskInputUpdate(text)}
               onFocus={() => setFocused(true)}
               onBlur={() => setFocused(false)}
             />
@@ -337,7 +338,7 @@ const UpdateTask = ({
                   HomeStyle.itaskupdate2,
                   //isFocused ? HomeStyle.itaskFocused : null,
                 ]}
-                value={item.description}
+                value={taskInputUpdate.description}
                 placeholder='Insira mais detalhes sobre a sua tarefa ou então faça um checklist de itens para resolver...'
                 placeholderTextColor={HomeStyle.itask_placeholder.color}
                 onChangeText={(text) => settaskDesc(text)}
@@ -385,7 +386,6 @@ export default () => {
     // input task
     const [isFocused, setFocused] = useState(false);
     const [taskInput, setTaskInput] = useState('');
-    const [taskDesc, settaskDesc] = useState('');
     const [refreshInput, setRefreshInput] = useState(0);
 
     // dell all itens
@@ -487,10 +487,6 @@ export default () => {
         item={itemState}
         isFocused={isFocused}
         setFocused={setFocused}
-        taskInput={taskInput}
-        setTaskInput={setTaskInput}
-        taskDesc={taskDesc}
-        settaskDesc={settaskDesc}
       />
 
       <TouchableOpacity style={HomeStyle.cleantasks} onPress={() => {setDellAll(true)} }>
